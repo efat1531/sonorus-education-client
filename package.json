@@ -97,7 +97,8 @@
   },
   "scripts": {
     "dev": "npx tailwindcss -i ./src/input.css -o ./src/css/style.css --watch",
-    "build": "npx tailwindcss -i ./src/input.css -o ./src/css/style.css"
+    "build": "npx tailwindcss -i ./src/input.css -o ./src/css/style.css",
+    "live-server": "npx live-server"
   },
   "keywords": [],
   "author": "Sonorous Education",
