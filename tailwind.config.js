@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js}", "./src/*.{html}"],
+  content: ["./src/**/*.{html,js}", "./src/*.html"],
   theme: {
     extend: {
       screens: {
@@ -80,6 +80,12 @@ module.exports = {
           200: "#F4C8C8",
           100: "#FFF0F0",
         },
+      },
+      dropShadow: {
+        glow: [
+          "0 0px 20px rgba(255,255, 255, 0.35)",
+          "0 0px 65px rgba(255, 255,255, 0.2)",
+        ],
       },
     },
     fontFamily: {
