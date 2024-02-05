@@ -33,3 +33,18 @@ mobileNavToggle.addEventListener("click", () => {
         <span class="sr-only">Menu</span>`;
   }
 });
+
+navMobileMenuItems.addEventListener("click", () => {
+  if(navMobileBgImage.classList.contains('translate-x-0')){
+    navMobileBgImage.classList.remove("translate-x-0");
+    navMobileMenuItems.classList.remove("translate-x-0");
+    setTimeout(() => {
+      navMobileBgImage.classList.add("translate-x-full");
+      navMobileMenuItems.classList.add("translate-x-full");
+      mobileNavToggle.innerHTML = `${barsSvg}
+      <span class="sr-only">Menu</span>`;
+    }, 200);
+   
+  }
+}
+);
