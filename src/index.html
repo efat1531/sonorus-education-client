@@ -8,9 +8,11 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/styleHomepage.css">
     <script src="./js/nav-menu.js" defer></script>
     <title>Sonorus Education</title>
   </head>
+
   <body>
     <!-- NavBar Tablet and Bigger Screen-->
     <nav class="hidden tablet:block">
@@ -19,7 +21,7 @@
       >
         <!-- Nav Menu  -->
         <div
-          class="flex *:px-4 *:py-4 gap-[0.625rem] *:font-medium *:tracking-[-.00875rem] *:text-sm "
+          class="flex *:px-4 *:py-4 gap-[0.625rem] *:font-medium *:tracking-[-.00875rem] *:text-sm"
         >
           <a href="#" class="nav-link">Home</a>
           <a href="#" class="nav-link">Why Learn</a>
@@ -306,31 +308,285 @@
       </div>
     </nav>
     <!-- Hero Section -->
+    <header>
+      <div
+        class="flex mx-5 justify-evenly flex-col md:flex-row gap-8 md:gap-0 items-center"
+      >
+        <div class="">Some text about Sonorus Educaion</div>
+        <div class="">
+          <img
+            src="./assets/svg/HomePageIllustration.svg"
+            alt=""
+            class="aspect-auto max-h-[20rem] laptop:max-h-[30rem] desktop:max-h-[40rem]"
+          />
+        </div>
+      </div>
+    </header>
     <!-- Header 1 -->
-    <header>
-      <div class="columns-2">
-        <div class="mx-auto">
-          Hello World
+    <section id="hero">
+      <!-- Hero Item Start -->
+      <div class="hero-item grid grid-cols-1 lg:grid-cols-2 gap-4 bg-gray-200">
+        <!-- Hero Section Details Start -->
+        <div class="hero-details flex items-center justify-center">
+          <div class="max-w-lg">
+            <h1>
+              Learn with expert
+              <br />
+              anytime anywhere
+            </h1>
+            <p class="mt-8 mb-4">
+              Our mission is to help people to find the best course online and
+              learn with expert anytime, anywhere.
+            </p>
+            <button class="btn-primary w-fit">Load More</button>
+          </div>
         </div>
-        <div><img src="./assets/images/Images.png" alt=""></div>
-      </div>
-    </header>
-    <header>
-      <div class="columns-2">
-        
-        <div><img src="./assets/images/Images2.png" alt=""></div>
-        <div class="mx-auto">
-          Hello World
+        <!-- Hero Section Details End -->
+        <!-- Hero Section Image Start -->
+        <div class="hero-img">
+          <picture>
+            <!-- <source media="(max-width:650px)" srcset="img_pink_flowers.jpg">
+                  <source media="(max-width:465px)" srcset="img_white_flower.jpg"> -->
+            <img src="./assets/images/hero-banner-1.png" alt="Hero Banner" class="clip-path-image-landing-page" />
+          </picture>
         </div>
+        <!-- Hero Section Image End -->
       </div>
-    </header>
-    <header>
-      <div class="columns-2">
-        <div class="mx-auto">
-          Hello World
+      <!-- Hero Item End -->
+      <!-- Hero Item Start -->
+      <div class="hero-item grid grid-cols-1 lg:grid-cols-2 gap-4 bg-white">
+        <!-- Hero Section Image Start -->
+        <div class="hero-img">
+          <picture>
+            <!-- <source media="(max-width:650px)" srcset="img_pink_flowers.jpg">
+              <source media="(max-width:465px)" srcset="img_white_flower.jpg"> -->
+            <img src="./assets/images/hero-banner-2.png" alt="Hero Banner"  />
+          </picture>
         </div>
-        <div><img src="./assets/images/Images3.png" alt=""></div>
+        <!-- Hero Section Image End -->
+        <!-- Hero Section Details Start -->
+        <div class="hero-details flex items-center justify-center">
+          <div class="max-w-lg">
+            <h1>
+              Speak Globally:
+              <br />
+              Master Phonetics
+            </h1>
+            <p class="mt-8 mb-4">
+              Voice the edge: Impress global partners, build trust, avoid
+              mishaps. Learn phonetics, speak with mastery
+            </p>
+            <button class="btn-primary w-fit">Load More</button>
+          </div>
+        </div>
+        <!-- Hero Section Details End -->
       </div>
-    </header>
+      <!-- Hero Item End -->
+      <!-- Hero Item Start -->
+      <div class="hero-item grid grid-cols-1 lg:grid-cols-2 gap-4 bg-gray-200">
+        <!-- Hero Section Details Start -->
+        <div class="hero-details flex items-center justify-center">
+          <div class="max-w-lg">
+            <h1>
+              Speak Clearly,
+              <br />
+              Conquer Globally
+            </h1>
+            <p class="mt-8 mb-4">
+              Hear words whisper secrets? Unlock phonics, unlock their magic!
+            </p>
+            <a href="#" class="btn-primary w-fit"> Create Account </a>
+          </div>
+        </div>
+        <!-- Hero Section Details End -->
+        <!-- Hero Section Image Start -->
+        <div class="hero-img">
+          <picture>
+            <!-- <source media="(max-width:650px)" srcset="img_pink_flowers.jpg">
+              <source media="(max-width:465px)" srcset="img_white_flower.jpg"> -->
+            <img src="./assets/images/hero-banner-3.png" alt="Hero Banner" class="clip-path-image-landing-page"/>
+          </picture>
+        </div>
+        <!-- Hero Section Image End -->
+      </div>
+      <!-- Hero Item End -->
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Best Selling Course Section Start -->
+    <section id="best-selling-course" class="bg-gray-200 py-16">
+      <div class="container">
+        <!-- Section Header Start -->
+        <div class="section-header">
+          <span class="section-header-before"></span>
+          <h2>Best Selling Courses</h2>
+          <span class="section-header-after"></span>
+        </div>
+        <!-- Section Header End -->
+
+        <!-- Course Grid Start -->
+        <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-4 py-4">
+          <!-- Course Item Start -->
+          <div class="bg-white border">
+            <!-- Course Image Box -->
+            <div class="course-img-box">
+              <img src="./assets/img/course-img-1.png" alt="" />
+            </div>
+            <!-- Course Details -->
+            <div class="grid">
+              <div class="flex justify-between px-4 py-2">
+                <span
+                  class="bg-orange-300 text-orange-700 uppercase px-2 py-1 font-semibold"
+                  >DESIGN</span
+                >
+                <p>
+                  <span class="text-orange-500 font-bold text-xl">500</span>
+                  Taka
+                </p>
+              </div>
+              <p class="p-4">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos,
+                saepe!
+              </p>
+              <div class="flex justify-between px-4 py-2 border-t">
+                <!-- Course Rating -->
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-star text-yellow-500"></i>
+                  <span>5.0</span>
+                </div>
+                <!-- Course Statistics -->
+                <div class="flex gap-1">
+                  <span class="font-semibold">216k</span>
+                  <span class="text-gray-500">students</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Course Item End -->
+        </div>
+        <!-- Course Grid End -->
+      </div>
+    </section>
+    <!-- Best Selling Course Section End -->
+
+    <!-- Instructor Section Start -->
+    <section id="instructor" class="py-16">
+      <div class="container">
+        <!-- Section Header Start -->
+        <div class="section-header">
+          <span class="section-header-before"></span>
+          <h2>Instructor</h2>
+          <span class="section-header-after"></span>
+        </div>
+        <!-- Section Header End -->
+        <!-- Instructor Item Start -->
+        <div class="w-72 mx-auto bg-white border">
+          <!-- Instructor Image Box -->
+          <div class="course-img-box">
+            <img src="./assets/img/course-img-1.png" alt="" />
+          </div>
+          <!-- Instructor Details -->
+          <div class="grid">
+            <div class="text-center p-4">
+              <p class="font-semibold">Mahdi Ahmed</p>
+              <p class="text-gray-400 mt-1">English Lecturer</p>
+            </div>
+            <div class="flex justify-between px-4 py-2 border-t">
+              <!-- Course Rating -->
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-star text-yellow-500"></i>
+                <span>5.0</span>
+              </div>
+              <!-- Course Statistics -->
+              <div class="flex gap-1">
+                <span class="font-semibold">216k</span>
+                <span class="text-gray-500">students</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Instructor Item End -->
+      </div>
+    </section>
+
+      <!-- Footer Start -->
+      <footer id="footer" class="bg-zinc-800 text-white">
+        <!-- Footer CTA start -->
+        <div class="container px-2">
+            <div class="lg:flex justify-between items-center py-16">
+                <div class="py-8 ">
+                    <h1>Start learning with 67.1k <br> students around the world.</h1>
+                    <div class="footer-btns flex gap-4 mt-2">
+                        <button class="btn-primary">Join The Family</button>
+                        <button class="btn-secondary">Browse All Coursses</button>
+                    </div>
+                </div>
+                <div class="flex gap-12">
+                    <div>
+                        <h2>6.3k</h2>
+                        <span class="text-gray-400 font-semibold">Online Courses</span>
+                    </div>
+                    <div>
+                        <h2>99.9%</h2>
+                        <span class="text-gray-400 font-semibold">Success Rate</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer CTA end -->
+        <!-- Main Footer Start -->
+        <div class="border-t border-zinc-700 py-16">
+            <div class="container px-2">
+                <div class="grid sm:grid-cols-5">
+                    <!-- Footer Col-1 -->
+                    <div class="col-span-3">
+                        <div class="footer-img-box w-40">
+                            <img src="./assets/img/logo.png" alt="">
+                        </div>
+                        <p class="max-w-xs mt-4 text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Corporis, in.</p>
+                        <div class="footer-social-links flex gap-2 mt-4">
+                            <a href="">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="">
+                                <i class="fa-brands fa-linkedin-in highlight"></i>
+                            </a>
+                            <a href="">
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Footer Col-2 -->
+                    <div class="mt-8 sm:mt-0">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="">About</a> </li>
+                            <li><a href="">Contact</a></li>
+                        </ul>
+                    </div>
+                    <!-- Footer Col-3 -->
+                    <div class="mt-8 sm:mt-0">
+                        <h4>Support</h4>
+                        <ul>
+                            <li> <a href="">Help Center</a> </li>
+                            <li><a href="">FAQs</a> </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Main Footer End -->
+        <!-- Footer Copyright Start -->
+        <div class="border-t border-zinc-700 py-8">
+            <div class="container px-2">
+                <p class="text-gray-400">
+                    &copy; 2023 - <span class="text-white">Sonorus English Learning</span>. Designed by <span
+                        class="text-orange-500">Alpha Coders</span>. All rights reserved.
+                </p>
+            </div>
+        </div>
+        <!-- Footer Copyright End -->
+    </footer>
   </body>
 </html>
