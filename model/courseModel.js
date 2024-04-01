@@ -17,13 +17,6 @@ const courseSchema = new mongoose.Schema({
     },
     discount: {
         type: Number,
-        validate: {
-            validator: function(val) {
-                console.log(val, this.price);
-                return val < this.price;
-            },
-          message: "Discount must be less than the price",
-        },
         default: 0,
     },
       
@@ -81,10 +74,11 @@ const courseSchema = new mongoose.Schema({
         delete ret._id;
         delete ret.__v;
         delete ret.createdAt;
-        delete ret.id
+        //delete ret.id
         return ret;
     }},
     toObject: { virtuals: true },
+    strict: true,
 }
 );
 
