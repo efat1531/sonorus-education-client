@@ -74,7 +74,19 @@ const courseSchema = new mongoose.Schema({
     slug : {
         type: String
     },
-});
+},
+{
+    toJSON: { virtuals: true, transform: function(doc, ret) {
+        ret.id = ret._id;
+        delete ret._id;
+        delete ret.__v;
+        delete ret.createdAt;
+        delete ret.id
+        return ret;
+    }},
+    toObject: { virtuals: true },
+}
+);
 
 courseSchema.virtual("discountPrice").get(function() {
     return this.price - this.discount;

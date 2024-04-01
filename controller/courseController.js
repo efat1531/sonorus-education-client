@@ -18,24 +18,23 @@ exports.getAllCourses = async (req, res) => {
   }
 };
 exports.getCourseByID = async (req, res) => {
-  try {
-    const course = await courseModel.findById(req.params.id);
-    res.status(200).json({
-      status: "success",
-      data: {
-        course,
-      },
-    });
-  } catch (err) {
-    res.status(404).json({
-      status: "fail",
-      message: err,
-    });
-  }
-};
+    try {
+      const course = await courseModel.findById(req.params.id);
+      res.status(200).json({
+        status: "success",
+        data: {
+          course,
+        },
+      });
+    } catch (err) {
+      res.status(404).json({
+        status: "fail",
+        message: err,
+      });
+    }
+  };
 
 exports.createCourse = async (req, res) => {
-  console.log(req.body);
   try {
     const newCourse = await courseModel.create(req.body);
     res.status(201).json({
