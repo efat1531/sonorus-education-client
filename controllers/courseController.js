@@ -36,6 +36,14 @@ exports.createCourse = catchAsync(async (req, res, next) => {
 });
 
 exports.updateCourse = catchAsync(async (req, res, next) => {
+  if (req.body.price || req.body.discount) {
+    return next(
+      new AppError(
+        `Use /${req.params.id}/update-price route to update price or discount`,
+        400
+      )
+    );
+  }
   const course = await courseModel.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
     runValidators: true,
@@ -43,6 +51,28 @@ exports.updateCourse = catchAsync(async (req, res, next) => {
   if (!course) {
     return next(new AppError("No course found with that ID", 404));
   }
+  res.status(200).json({
+    status: "success",
+    data: {
+      course,
+    },
+  });
+});
+
+exports.updateCoursePrice = catchAsync(async (req, res, next) => {
+  const course = await courseModel.findById(req.params.id);
+  if (!course) {
+    return next(new AppError("No course found with that ID", 404));
+  }
+  if (!req.body.price && !req.body.discount) {
+    return next(new AppError("Price or discount is required", 400));
+  }
+  if (req.body.price < 0 || req.body.discount < 0) {
+    return next(new AppError("Price or discount cannot be negative", 400));
+  }
+  course.price = req.body.price || course.price;
+  course.discount = req.body.discount || course.discount;
+  await course.save();
   res.status(200).json({
     status: "success",
     data: {
