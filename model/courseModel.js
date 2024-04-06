@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const moment = require("moment-timezone");
 
 const courseSchema = new mongoose.Schema(
   {
@@ -94,10 +95,20 @@ const courseSchema = new mongoose.Schema(
         delete ret.__v;
         delete ret.createdAt;
         //delete ret.id
+        ret.passwordChangedAt = moment(ret.passwordChangedAt)
+          .tz(process.env.TZ)
+          .format("hh:mm A, MMMM DD,YYYY");
+        ret.createdAt = moment(ret.createdAt)
+          .tz(process.env.TZ)
+          .format("hh:mm A, MMMM DD,YYYY");
+        ret.updatedAt = moment(ret.updatedAt)
+          .tz(process.env.TZ)
+          .format("hh:mm A, MMMM DD,YYYY");
         return ret;
       },
     },
     toObject: { virtuals: true },
+    timestamps: true,
     strict: true,
   }
 );

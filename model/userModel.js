@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const bycryptjs = require("bcryptjs");
 const validator = require("validator");
+const moment = require("moment-timezone");
 
 const userSchema = new mongoose.Schema(
   {
@@ -93,6 +94,15 @@ const userSchema = new mongoose.Schema(
         ret.id = ret._id;
         delete ret._id;
         delete ret.__v;
+        ret.passwordChangedAt = moment(ret.passwordChangedAt)
+          .tz(process.env.TZ)
+          .format("hh:mm A, MMMM DD,YYYY");
+        ret.createdAt = moment(ret.createdAt)
+          .tz(process.env.TZ)
+          .format("hh:mm A, MMMM DD,YYYY");
+        ret.updatedAt = moment(ret.updatedAt)
+          .tz(process.env.TZ)
+          .format("hh:mm A, MMMM DD,YYYY");
         return ret;
       },
     },
@@ -108,7 +118,7 @@ userSchema.pre("save", async function (next) {
 });
 
 userSchema.pre("save", function (next) {
-  if (!this.isModified("password") || !this.isNew) return next();
+  if (!this.isModified("password") && !this.isNew) return next();
   this.passwordChangedAt = Date.now() - 1000;
   next();
 });
@@ -133,6 +143,19 @@ userSchema.methods.changedPasswordAfter = function (JWTTimestamp) {
     return JWTTimestamp < changedTimestamp;
   }
   return false;
+};
+
+userSchema.methods.createPasswordResetToken = function () {
+  const resetToken = require("crypto").randomBytes(32).toString("hex");
+  this.passwordResetToken = require("crypto")
+    .createHash("sha256")
+    .update(resetToken)
+    .digest("hex");
+  this.passwordResetExpires = Date.now() + 10 * 60 * 1000;
+  return resetToken;
+};
+userSchema.methods.fullName = function () {
+  return this.firstName + (this.lastName ? " " + this.lastName : "");
 };
 
 const userModel = mongoose.model("User", userSchema);
