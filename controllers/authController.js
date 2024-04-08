@@ -65,6 +65,14 @@ exports.signup = catchAsync(async (req, res, next) => {
   // Send the email
   await transporter.sendMail(message);
 
+  res.cookie("jwt", token, {
+    expires: new Date(
+      Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
+    ),
+    secure: process.env.NODE_ENV === "production" ? true : false,
+    httpOnly: true,
+  });
+
   res.status(201).json({
     status: "success",
     token,
@@ -87,6 +95,13 @@ exports.login = catchAsync(async (req, res, next) => {
   }
   const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
     expiresIn: process.env.JWT_EXPIRES_IN,
+  });
+  res.cookie("jwt", token, {
+    expires: new Date(
+      Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
+    ),
+    secure: process.env.NODE_ENV === "production" ? true : false,
+    httpOnly: true,
   });
   res.status(200).json({
     status: "success",
@@ -234,12 +249,13 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
   // Send the email
   await transporter.sendMail(message);
 
-  const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
-    expiresIn: process.env.JWT_EXPIRES_IN,
-  });
+  //   const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
+  //     expiresIn: process.env.JWT_EXPIRES_IN,
+  //   });
   res.status(200).json({
     status: "success",
-    token,
+    // token,
+    message: "Password reset successful. Please login with new password",
   });
 });
 
@@ -280,11 +296,12 @@ exports.updatePassword = catchAsync(async (req, res, next) => {
     },
   });
   await transporter.sendMail(message);
-  const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
-    expiresIn: process.env.JWT_EXPIRES_IN,
-  });
+  //   const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
+  //     expiresIn: process.env.JWT_EXPIRES_IN,
+  //   });
   res.status(200).json({
     status: "success",
-    token,
+    // token,
+    message: "Password updated successfully. Please login with new password",
   });
 });

@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: [true, "Please provide your first name"],
       minlength: 2,
-      maxlength: 32,
+      maxlength: 128,
       trim: true,
     },
     lastName: {
@@ -84,7 +84,6 @@ const userSchema = new mongoose.Schema(
     active: {
       type: Boolean,
       default: true,
-      select: false,
     },
   },
   {
@@ -96,7 +95,7 @@ const userSchema = new mongoose.Schema(
         delete ret.__v;
         ret.passwordChangedAt = moment(ret.passwordChangedAt)
           .tz(process.env.TZ)
-          .format("hh:mm A, MMMM DD,YYYY");
+          .format("hh:mm:ss A, MMMM DD,YYYY");
         ret.createdAt = moment(ret.createdAt)
           .tz(process.env.TZ)
           .format("hh:mm A, MMMM DD,YYYY");

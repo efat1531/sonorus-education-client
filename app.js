@@ -1,5 +1,15 @@
 const express = require("express");
 const morgan = require("morgan");
+const rateLimit = require("express-rate-limit");
+const helmet = require("helmet");
+const Tokens = require("csrf");
+const tokens = new Tokens();
+const cookieParser = require("cookie-parser");
+const hpp = require("hpp");
+const xss = require("xss-clean");
+
+const mongooseSanitize = require("express-mongo-sanitize");
+
 const AppError = require("./utils/appError");
 const globalErrorController = require("./controllers/errorController");
 
@@ -8,7 +18,26 @@ const authRouter = require("./routes/authRoutes");
 const userRouter = require("./routes/userRoutes");
 
 const app = express();
-app.use(express.json());
+
+app.use(cookieParser());
+app.use(express.json({ limit: "10kb" }));
+app.use(hpp());
+app.use(xss());
+
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+  })
+);
+
+app.use((req, res, next) => {
+  const secret = req.cookies._csrf || tokens.secretSync();
+  res.cookie("_csrf", secret);
+  req.csrfToken = tokens.create(secret);
+  next();
+});
+
+app.use(mongooseSanitize());
 
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
@@ -21,9 +50,23 @@ app.get("/", (req, res) => {
   });
 });
 
-app.use("/api/v1/courses", coursesRouter);
-app.use("/api/v1/auth", authRouter);
-app.use("/api/v1/users", userRouter);
+const generalLimiter = rateLimit({
+  max: 100,
+  windowMs: 15 * 60 * 1000,
+  message: "Too many requests from this IP, please try again in an hour!",
+  standardHeaders: true,
+});
+
+const authLimiter = rateLimit({
+  max: 10,
+  windowMs: 15 * 60 * 1000,
+  message: "Too many requests from this IP, please try again in an hour!",
+  standardHeaders: true,
+});
+
+app.use("/api/v1/courses", generalLimiter, coursesRouter);
+app.use("/api/v1/auth", authLimiter, authRouter);
+app.use("/api/v1/users", generalLimiter, userRouter);
 
 app.all("*", (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));

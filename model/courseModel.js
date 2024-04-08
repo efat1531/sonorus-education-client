@@ -95,9 +95,6 @@ const courseSchema = new mongoose.Schema(
         delete ret.__v;
         delete ret.createdAt;
         //delete ret.id
-        ret.passwordChangedAt = moment(ret.passwordChangedAt)
-          .tz(process.env.TZ)
-          .format("hh:mm A, MMMM DD,YYYY");
         ret.createdAt = moment(ret.createdAt)
           .tz(process.env.TZ)
           .format("hh:mm A, MMMM DD,YYYY");
