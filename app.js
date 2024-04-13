@@ -16,6 +16,7 @@ const globalErrorController = require("./controllers/errorController");
 const coursesRouter = require("./routes/courseRoute");
 const authRouter = require("./routes/authRoutes");
 const userRouter = require("./routes/userRoutes");
+const reviewRouter = require("./routes/reviewRoutes");
 
 const app = express();
 
@@ -67,6 +68,7 @@ const authLimiter = rateLimit({
 app.use("/api/v1/courses", generalLimiter, coursesRouter);
 app.use("/api/v1/auth", authLimiter, authRouter);
 app.use("/api/v1/users", generalLimiter, userRouter);
+app.use("/api/v1/reviews", generalLimiter, reviewRouter);
 
 app.all("*", (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));

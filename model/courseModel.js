@@ -106,7 +106,7 @@ const courseSchema = new mongoose.Schema(
     },
     toObject: { virtuals: true },
     timestamps: true,
-    strict: true,
+    toJSON: { virtuals: true },
   }
 );
 
@@ -120,6 +120,12 @@ courseSchema.virtual("discountPercentage").get(function () {
 
 courseSchema.virtual("durationMonths").get(function () {
   return this.duration / 30;
+});
+
+courseSchema.virtual("reviews", {
+  ref: "Review",
+  foreignField: "course",
+  localField: "_id",
 });
 
 courseSchema.pre("save", function (next) {
