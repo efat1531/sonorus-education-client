@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ["./src/**/*.{html,js}", "./src/*.html"],
+export default {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       screens: {
@@ -92,5 +92,5 @@ module.exports = {
       sans: "Inter, sans-serif",
     },
   },
-  plugins: [require("tailwindcss"), require("autoprefixer")],
+  plugins: [],
 };
