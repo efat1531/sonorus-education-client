@@ -4,10 +4,10 @@ const Button = ({ title, className, disabled, loading, ...rest }) => {
   return (
     <button
       className={twMerge(
-        `h-12 bg-Primary-100  group-hover:duration-[250ms] ${
+        `h-12 bg-Primary-100 hover:duration-[250ms] ${
           disabled
             ? "bg-gray-700 hover:bg-gray-700"
-            : "group-hover:bg-Primary-500 cursor-pointer"
+            : "hover:bg-Primary-500 cursor-pointer"
         }`,
         className
       )}
@@ -15,8 +15,8 @@ const Button = ({ title, className, disabled, loading, ...rest }) => {
       disabled={disabled}
     >
       <div
-        className={`capitalize text-base font-semibold text-orange-500 px-6 leading-[48px]  group-hover:duration-[250ms] ${
-          disabled ? "text-slate-400" : "group-hover:text-white"
+        className={`capitalize text-base font-semibold text-orange-500 px-6 leading-[48px] hover:duration-[250ms] ${
+          disabled ? "text-slate-400" : "hover:text-white"
         }`}
       >
         {!disabled ? (
