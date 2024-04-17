@@ -6,9 +6,7 @@ const BestSellingCourses = () => {
       <div className="px-8">
         {/* <!-- Section Header Start --> */}
         <div className="section-header">
-          <span className="section-header-before"></span>
           <h2>Best Selling Courses</h2>
-          <span className="section-header-after"></span>
         </div>
         {/* <!-- Section Header End --> */}
         {/* <!-- Course Grid Start --> */}

@@ -4,9 +4,7 @@ const Instructor = () => {
       <div className="container">
         {/* <!-- Section Header Start --> */}
         <div className="section-header">
-          <span className="section-header-before"></span>
           <h2>Instructor</h2>
-          <span className="section-header-after"></span>
         </div>
         {/* <!-- Section Header End --> */}
         {/* <!-- Instructor Item Start --> */}
