@@ -1,5 +1,13 @@
+import BestSellingCourses from "../components/Home/BestSellingCourses";
+import Hero from "../components/Home/Hero";
+
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <>
+      <Hero />
+      <BestSellingCourses />
+    </>
+  );
 };
 
 export default Home;
