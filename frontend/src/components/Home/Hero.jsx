@@ -22,8 +22,8 @@ const Hero = () => {
         {/* <!-- Hero Item Start --> */}
         <div className="hero-item grid grid-cols-1 lg:grid-cols-2 gap-4 bg-gray-200">
           {/* <!-- Hero Section Details Start --> */}
-          <div className="hero-details flex items-center justify-center">
-            <div className="max-w-lg">
+          <div className="hero-details flex items-center">
+            <div className="p-8">
               <h1>
                 Learn with expert
                 <br />
@@ -39,13 +39,11 @@ const Hero = () => {
           {/* <!-- Hero Section Details End --> */}
           {/* <!-- Hero Section Image Start --> */}
           <div className="hero-img">
-            <picture>
-              <img
-                src={HeroBanner1}
-                alt="Hero Banner"
-                className="tablet:clip-path-image-landing-page"
-              />
-            </picture>
+            <img
+              src={HeroBanner1}
+              alt="Hero Banner"
+              className="tablet:clip-path-image-landing-page"
+            />
           </div>
           {/* <!-- Hero Section Image End --> */}
         </div>
@@ -54,14 +52,12 @@ const Hero = () => {
         <div className="hero-item grid grid-cols-1 lg:grid-cols-2 gap-4 bg-white">
           {/* <!-- Hero Section Image Start --> */}
           <div className="hero-img">
-            <picture>
-              <img src={HeroBanner2} alt="Hero Banner" />
-            </picture>
+            <img src={HeroBanner2} alt="Hero Banner" />
           </div>
           {/* <!-- Hero Section Image End --> */}
           {/* <!-- Hero Section Details Start --> */}
-          <div className="hero-details flex items-center justify-center">
-            <div className="max-w-lg">
+          <div className="hero-details flex items-center">
+            <div className="p-8">
               <h1>
                 Speak Globally:
                 <br />
@@ -80,8 +76,8 @@ const Hero = () => {
         {/* <!-- Hero Item Start --> */}
         <div className="hero-item grid grid-cols-1 lg:grid-cols-2 gap-4 bg-gray-200">
           {/* <!-- Hero Section Details Start --> */}
-          <div className="hero-details flex items-center justify-center">
-            <div className="max-w-lg">
+          <div className="hero-details flex items-center">
+            <div className="p-8">
               <h1>
                 Speak Clearly,
                 <br />
@@ -91,21 +87,18 @@ const Hero = () => {
                 Hear words whisper secrets? Unlock phonics, unlock their magic!
               </p>
               <a href="#" className="btn-primary w-fit">
-                {" "}
-                Create Account{" "}
+                Create Account
               </a>
             </div>
           </div>
           {/* <!-- Hero Section Details End --> */}
           {/* <!-- Hero Section Image Start --> */}
           <div className="hero-img">
-            <picture>
-              <img
-                src={HeroBanner3}
-                alt="Hero Banner"
-                className="tablet:clip-path-image-landing-page"
-              />
-            </picture>
+            <img
+              src={HeroBanner3}
+              alt="Hero Banner"
+              className="tablet:clip-path-image-landing-page"
+            />
           </div>
           {/* <!-- Hero Section Image End --> */}
         </div>

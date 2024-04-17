@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer id="footer" className="bg-zinc-800 text-white">
       {/* <!-- Footer CTA start --> */}
-      <div className="container px-2">
+      <div className="px-8">
         <div className="lg:flex justify-between items-center py-16">
           <div className="py-8 ">
             <h1>
@@ -33,7 +33,7 @@ const Footer = () => {
       {/* <!-- Footer CTA end --> */}
       {/* <!-- Main Footer Start --> */}
       <div className="border-t border-zinc-700 py-16">
-        <div className="container px-2">
+        <div className="px-8">
           <div className="grid sm:grid-cols-5">
             {/* <!-- Footer Col-1 --> */}
             <div className="col-span-3">
@@ -94,7 +94,7 @@ const Footer = () => {
       {/* <!-- Main Footer End --> */}
       {/* <!-- Footer Copyright Start --> */}
       <div className="border-t border-zinc-700 py-8">
-        <div className="container px-2">
+        <div className="px-8">
           <p className="text-gray-400">
             &copy; 2023 -{" "}
             <span className="text-white">Sonorus English Learning</span>.
