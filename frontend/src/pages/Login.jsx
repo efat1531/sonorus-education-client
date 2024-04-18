@@ -12,11 +12,21 @@ const Login = () => {
           </div>
         </div>
         <div className="w-full flex items-center">
-          <div className="max-w-[600px] w-full mx-auto p-4">
+          <div className="max-w-[650px] w-full mx-auto p-4">
             <h2 className="text-center">Sign in to your account</h2>
             <form onSubmit={handleSubmit} className="mt-8 grid gap-4">
-              <Input label="Email" placeholder="Username or email address..." />
-              <Input label="Password" placeholder="Password" type="password" />
+              <Input
+                label="Email"
+                id="email"
+                type="email"
+                placeholder="Username or email address..."
+              />
+              <Input
+                label="Password"
+                placeholder="Password"
+                id="password"
+                type="password"
+              />
               <div className="flex justify-between">
                 <div className="flex gap-2 items-center">
                   <input
@@ -28,7 +38,12 @@ const Login = () => {
                     Remember Me
                   </label>
                 </div>
-                <Button title="Sign in" secondary={true} className="px-8" />
+                <Button
+                  title="Sign in"
+                  type="submit"
+                  secondary={true}
+                  className="px-8"
+                />
               </div>
             </form>
           </div>

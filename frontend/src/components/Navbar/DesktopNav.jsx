@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Logo from "../..//assets/svg/GraduationCap.svg";
 import CartIcon from "../../assets/Icon/CartIcon";
 import FollowIcon from "../../assets/Icon/FollowIcon";
@@ -16,14 +17,14 @@ const DesktopNav = () => {
       {/* <!-- Logo + Account --> */}
       <div className="flex mx-8 my-7 items-center justify-between">
         {/* <!-- Logo --> */}
-        <a href="#">
+        <Link to="/">
           <div className="flex items-center select-none">
             <img src={Logo} alt="Logo" className="mx-2" />
             <div className="text-[32px] font-semibold text-neutral-800">
               Sonorous
             </div>
           </div>
-        </a>
+        </Link>
         {/* <!-- Account Creation Notification Icon etc --> */}
         <div className="flex gap-6 items-center h-12">
           {/* <!-- notification Button --> */}
@@ -46,14 +47,14 @@ const DesktopNav = () => {
           </div>
           {/* <!-- Create Account Button --> */}
           <div className="flex gap-3">
-            <div className="group">
+            <Link to="/register" className="group">
               <Button title="Create Account" />
-            </div>
+            </Link>
 
             {/* <!-- Sign In Button --> */}
-            <div className="group">
+            <Link to="/login" className="group">
               <Button title="Sign In" />
-            </div>
+            </Link>
           </div>
         </div>
       </div>

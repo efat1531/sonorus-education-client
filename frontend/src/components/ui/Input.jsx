@@ -1,10 +1,10 @@
 import { Eye, EyeOff } from "lucide-react";
 import { useState } from "react";
 
-const Input = ({ id, type, label, ...rest }) => {
+const Input = ({ id, type, label, optional = false, ...rest }) => {
   const [hide, setHide] = useState(false);
   return (
-    <div className="grid gap-2">
+    <div className="grid gap-2 w-full">
       <label htmlFor={id}>{label}</label>
       <div className="relative">
         <input
@@ -13,6 +13,7 @@ const Input = ({ id, type, label, ...rest }) => {
           name={id}
           {...rest}
           className="px-4 py-2 bg-white border w-full"
+          required={!optional}
         />
         {type === "password" && (
           <span className="absolute top-2.5 right-2">
