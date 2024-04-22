@@ -2,6 +2,7 @@ const userModel = require("../model/userModel");
 const catchAsync = require("../utils/catchAsync");
 const AppError = require("../utils/appError");
 
+// This function retrieves all users from the database using the userModel's find method.
 exports.getAllUsers = catchAsync(async (req, res, next) => {
   const users = await userModel.find();
   res.status(200).json({
@@ -13,6 +14,7 @@ exports.getAllUsers = catchAsync(async (req, res, next) => {
   });
 });
 
+// This function retrieves a user by its ID from the database and sends it in the response. If no user is found, it triggers an error handler with a 404 status.
 exports.getUserByID = catchAsync(async (req, res, next) => {
   const user = await userModel.findById(req.params.id);
   if (!user) {
@@ -26,6 +28,8 @@ exports.getUserByID = catchAsync(async (req, res, next) => {
   });
 });
 
+
+// This function updates a user by its ID using the provided request body. If no user is found with the provided ID, it triggers an error handler with a 404 status code.
 exports.updateUser = catchAsync(async (req, res, next) => {
   // If user does not provide current password
   if (!req.body.currentPassword) {
@@ -59,6 +63,7 @@ exports.updateUser = catchAsync(async (req, res, next) => {
   });
 });
 
+// This function deletes a user by its ID. It sets the user's active field to false instead of removing the user from the database.
 exports.deleteUser = catchAsync(async (req, res, next) => {
   await userModel.findByIdAndUpdate(req.user.id, { active: false });
   res.status(204).json({
@@ -67,6 +72,8 @@ exports.deleteUser = catchAsync(async (req, res, next) => {
   });
 });
 
+
+// This function retrieves the current user from the database using the user ID stored in the request object.
 exports.getMe = catchAsync(async (req, res, next) => {
   const user = await userModel.findById(req.user.id);
   res.status(200).json({

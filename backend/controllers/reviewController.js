@@ -2,6 +2,7 @@ const reviewModel = require("../model/reviewModel");
 const appError = require("../utils/appError");
 const catchAsync = require("../utils/catchAsync");
 
+// This function retrieves all reviews from the database using the reviewModel's find method.
 exports.getAllReviews = catchAsync(async (req, res, next) => {
   const reviews = await reviewModel.find();
   res.status(200).json({
@@ -13,6 +14,8 @@ exports.getAllReviews = catchAsync(async (req, res, next) => {
   });
 });
 
+
+// This function retrieves a review by its ID from the database and sends it in the response. If no review is found, it triggers an error handler with a 404 status.
 exports.getReviewByID = catchAsync(async (req, res, next) => {
   const review = await reviewModel.findById(req.params.id);
   if (!review) {
@@ -34,6 +37,8 @@ exports.getReviewByID = catchAsync(async (req, res, next) => {
   });
 });
 
+
+// This function creates a new review using the provided request body and returns the created review data with a 201 status code.
 exports.createReview = catchAsync(async (req, res, next) => {
   const newReview = await reviewModel.create({
     ...req.body,
@@ -48,6 +53,7 @@ exports.createReview = catchAsync(async (req, res, next) => {
   });
 });
 
+// This function updates a review by its ID using the provided request body. If no review is found with the provided ID, it triggers an error handler with a 404 status code. If the user is not the author of the review, it triggers an error handler with a 401 status code.
 exports.patchReview = catchAsync(async (req, res, next) => {
   const review = await reviewModel.findById(req.params.id);
   if (!review) {
@@ -77,6 +83,7 @@ exports.patchReview = catchAsync(async (req, res, next) => {
   });
 });
 
+// This function deletes a review by its ID. If no review is found with the provided ID, it triggers an error handler with a 404 status code. If the user is not the author of the review, it triggers an error handler with a 401 status code.
 exports.deleteReview = catchAsync(async (req, res, next) => {
   const review = await reviewModel.findById(req.params.id);
   if (!review) {

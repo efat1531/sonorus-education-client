@@ -1,5 +1,6 @@
 const AppError = require("../utils/appError");
 
+// This is a error handling middleware function thats sends the error in development mode 
 const sendDevError = (err, res) => {
   res.status(err.statusCode).json({
     status: err.status,
@@ -8,6 +9,7 @@ const sendDevError = (err, res) => {
   });
 };
 
+// This is a error handling middleware function thats sends the error in production mode
 const sendProductionError = (err, res) => {
   if (err.isOperational) {
     res.status(err.statusCode).json({
@@ -22,6 +24,7 @@ const sendProductionError = (err, res) => {
   }
 };
 
+// This is a error handling middleware function that handles all the errors
 module.exports = (err, req, res, next) => {
   err.statusCode = err.statusCode || 500;
   err.status = err.status || "error";
