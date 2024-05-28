@@ -102,7 +102,7 @@ exports.login = catchAsync(async (req, res, next) => {
   if (!email || !password) {
     return next(new AppError("Please provide email and password", 400));
   }
-  // Find the user with the email 
+  // Find the user with the email
   const user = await userModel
     .findOne({ email, active: { $ne: false } })
     .select("+password +role");
@@ -150,10 +150,10 @@ exports.protect = catchAsync(async (req, res, next) => {
     token = req.headers.authorization.split(" ")[1];
   }
   // Check if the token is present in the cookies
-  if (req.cookies.jwt) {
+  if (req.cookies.jwt && !token) {
     token = req.cookies.jwt;
   }
-  // If the token is not present send an error 
+  // If the token is not present send an error
   if (!token) {
     return next(
       new AppError("You are not logged in! Please log in to get access", 401)
@@ -228,11 +228,10 @@ exports.isLoggedIn = async (req, res, next) => {
   next();
 };
 
-
 // Forget password function to forget the password
 exports.forgetPassword = catchAsync(async (req, res, next) => {
   // Check if the email is present in the request body
-  if(!req.body.email){
+  if (!req.body.email) {
     return next(new AppError("Please provide email", 400));
   }
   // find the user with the email
@@ -284,7 +283,7 @@ exports.forgetPassword = catchAsync(async (req, res, next) => {
 // Reset password function to reset the password
 exports.resetPassword = catchAsync(async (req, res, next) => {
   // Check if the token is present in the request params
-  if(!req.params.token){
+  if (!req.params.token) {
     return next(new AppError("Token is required", 400));
   }
   // Hash the token
@@ -292,7 +291,7 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
     .createHash("sha256")
     .update(req.params.token)
     .digest("hex");
-  
+
   // Check if the password and confirm password is present in the request body
   if (!req.body.password || !req.body.passwordConfirm) {
     return next(
@@ -397,7 +396,7 @@ exports.updatePassword = catchAsync(async (req, res, next) => {
   });
   // Send the email
   transporter.sendMail(message);
-  // Send the response
+  // Send the responsegit
   res.status(200).json({
     status: "success",
     // token,
