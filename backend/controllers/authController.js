@@ -33,12 +33,11 @@ exports.signup = catchAsync(async (req, res, next) => {
     password,
     passwordConfirm,
   });
-
-  // Select the fields to send in the response
+  //   Select the fields to send in the response
   const user = await userModel
-    .findById(newUser._id)
+    .findById(newUser.id)
     .select(
-      "-active -passwordChangedAt -createdAt -updatedAt -passwordResetToken -passwordResetExpires +role"
+      "-active -passwordChangedAt -createdAt -updatedAt -passwordResetToken -passwordResetExpires"
     );
   // Create a JWT token with the user id and role and send it in the response
   const token = jwt.sign(

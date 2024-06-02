@@ -44,6 +44,7 @@
     "build": "npx tailwindcss -i ./src/input.css -o ./src/css/style.css",
     "dev": "nodemon server.js",
     "prod": "NODE_ENV=production nodemon server.js",
+    "error": "nodemon server.js --inspect",
     "live-server": "npx live-server"
   },
   "keywords": [],

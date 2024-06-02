@@ -163,6 +163,11 @@ courseSchema.pre("save", function (next) {
   next();
 });
 
+courseSchema.methods.addStudent = function () {
+  this.totalStudents++;
+  return this.save();
+};
+
 const courseModel = mongoose.model("Course", courseSchema);
 
 module.exports = courseModel;
