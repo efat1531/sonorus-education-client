@@ -20,7 +20,7 @@ const HomePageTemplate = ({ title, courses }) => {
 };
 
 HomePageTemplate.propTypes = {
-  courses: PropTypes.object.isRequired,
+  courses: PropTypes.array.isRequired,
   title: PropTypes.string.isRequired,
 };
 

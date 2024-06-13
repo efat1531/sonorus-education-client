@@ -1,0 +1,13 @@
+.quickLink {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: all 0.2s;
+}
+
+.quickLink:hover {
+  font-weight: 600;
+  color: #ff6636;
+  text-decoration: underline;
+}

@@ -9,7 +9,7 @@ import FavouriteIcon from "../uitls/Icons/FavouritesIcon";
 import ShoppingCartIcon from "../uitls/Icons/ShoppingCartIcon";
 
 const NavBarDesktop = () => {
-  const user = true;
+  const user = false;
   return (
     <>
       <NavList />

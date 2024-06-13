@@ -7,13 +7,36 @@ const CourseSmall = ({ course }) => {
   const numOfStudents =
     students > 1000 ? `${(students / 1000).toFixed(1)}k` : students;
   const studentLabel = students < 2 ? `student` : `students`;
+  const discount = 10;
+  const discountPercentage = discount ? (discount / price) * 100 : 0;
   return (
     <main className={style.container}>
       <img loading="lazy" src={imageSrc} className={style.mainImage} alt="" />
       <section className={style.contentSection}>
         <header className={style.header}>
           <span className={style.tag}>{category}</span>
-          <span className={style.price}>{price}$</span>
+          <div>
+            {discount && (
+              <span className={style.Discountprice}>
+                {price - discount}$&nbsp;
+              </span>
+            )}
+            <span
+              className={style.price}
+              style={
+                discount
+                  ? {
+                      textDecoration: "line-through",
+                      color: "GrayText",
+                      opacity: "0.5",
+                      fontSize: "0.8rem",
+                    }
+                  : {}
+              }
+            >
+              {price}$
+            </span>
+          </div>
         </header>
         <p className={style.description}>{title}</p>
       </section>

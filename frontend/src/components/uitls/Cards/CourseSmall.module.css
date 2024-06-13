@@ -24,6 +24,7 @@
   box-shadow: 0 -0.0625rem 0 0 #e9eaf0 inset;
   width: 15.25rem;
   height: 11.4375rem;
+  position: relative;
 }
 
 .contentSection {
@@ -39,7 +40,7 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 0 0.875rem;
+  /* padding: 0 0.875rem; */
   gap: 1.25rem;
   white-space: nowrap;
 }
@@ -114,4 +115,10 @@
   color: var(--Gray-500, #8c94a3);
   font-family: Inter, sans-serif;
   font-weight: 400;
+}
+
+.Discountprice {
+  color: var(--Primary-500, #ff6636);
+  font: 1rem Inter, -apple-system, Roboto, Helvetica, sans-serif;
+  font-weight: 600;
 }
