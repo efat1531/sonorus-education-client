@@ -1,0 +1,10 @@
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  stroke: #000;
+}
+
+.icon:hover {
+  cursor: pointer;
+  stroke: #ff6636;
+}

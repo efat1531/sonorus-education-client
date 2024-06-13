@@ -1,0 +1,61 @@
+.heroImgCol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+
+.imageClip {
+  clip-path: polygon(8% 0, 100% 0, 100% 100%, 0% 100%);
+  flex: 1;
+  flex-basis: 100%;
+}
+
+.imageText {
+  flex: 1;
+  flex-basis: 100%;
+}
+
+.headerText {
+  color: var(--Gray-900, #1d2026);
+  font-family: Inter;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 4.625rem; /* 102.778% */
+  letter-spacing: -0.09rem;
+  margin-left: 13rem;
+}
+
+.subText {
+  color: var(--Gray-700, #4b5563);
+  font-family: Inter;
+  font-size: 1.225rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.875rem;
+  margin-left: 13rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  color: var(--Gray-50, #f5f7fa);
+  background: var(--Primary-500, #ff6636);
+  /* Button/L */
+  font-family: Inter;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 3.5rem; /* 311.111% */
+  letter-spacing: -0.01125rem;
+  text-transform: capitalize;
+  padding: 0rem 2rem;
+  border: none;
+  margin-left: 13rem;
+}
+
+.btn:hover {
+  background: var(--Primary-400, #ff4d00);
+  cursor: pointer;
+  transition-duration: 0.2s;
+}

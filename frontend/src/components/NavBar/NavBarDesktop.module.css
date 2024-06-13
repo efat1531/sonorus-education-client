@@ -1,0 +1,19 @@
+.navLogoButton {
+  display: flex;
+  flex-direction: row;
+  padding: 1.8125rem 2rem 1.875rem 2rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navAuthButton {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.navProfileButton {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}

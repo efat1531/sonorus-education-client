@@ -1,0 +1,96 @@
+.profileCard {
+  padding-bottom: 0.75rem;
+  justify-content: center;
+  border: 0.0625rem solid rgba(233, 234, 240, 1);
+  background-color: var(--Gray-White, #fff);
+  display: flex;
+  max-width: 15.25rem;
+  flex-direction: column;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.profileCard:hover,
+.profileCard:active {
+  transform: scale(1.02) translateY(-4px); /* Zoom in and lift up */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Increase shadow size and blur */
+  border: 1px solid rgba(0, 0, 0, 0.2); /* Add subtle border with slight transparency */
+}
+
+.profileImage {
+  aspect-ratio: 1;
+  object-fit: auto;
+  object-position: center;
+  width: 100%;
+  box-shadow: 0rem -0.0625rem 0rem 0rem #e9eaf0 inset;
+}
+
+.profileInfo {
+  align-self: center;
+  display: flex;
+  margin-top: 0.75rem;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 1.25rem;
+}
+
+.profileName {
+  color: var(--Gray-900, #1d2026);
+  font: 500 1rem/1.375rem Inter, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+.profileTitle {
+  color: var(--Gray-500, #8c94a3);
+  letter-spacing: -0.00875rem;
+  margin-top: 0.25rem;
+  font: 400 0.875rem/1.4375rem Inter, -apple-system, Roboto, Helvetica,
+    sans-serif;
+}
+
+.divider {
+  border: 0.0625rem solid rgba(233, 234, 240, 1);
+  background-color: #e9eaf0;
+  min-height: 0.0625rem;
+  margin-top: 0.6875rem;
+  width: 100%;
+}
+
+.profileDetails {
+  justify-content: space-between;
+  display: flex;
+  margin-top: 0.75rem;
+  width: 100%;
+  gap: 1.25rem;
+  font-size: 0.875rem;
+  letter-spacing: -0.00875rem;
+  padding: 0 1rem;
+}
+.rating {
+  align-self: flex-start;
+  display: flex;
+  gap: 0.3125rem;
+  color: var(--Gray-700, #4e5566);
+  font-weight: 500;
+  white-space: nowrap;
+  line-height: 1.4375rem;
+}
+
+.stats {
+  justify-content: center;
+  display: flex;
+  gap: 0;
+}
+
+.statsCount {
+  color: var(--Gray-700, #4e5566);
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  line-height: 1.4375rem;
+}
+
+.statsDescription {
+  color: var(--Gray-500, #8c94a3);
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  line-height: 1.4375rem;
+}

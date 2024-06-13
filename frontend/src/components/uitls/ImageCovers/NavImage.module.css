@@ -1,0 +1,9 @@
+.navImage {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 3rem;
+}
+.navImage:hover {
+  cursor: pointer;
+  border: 0.125rem solid var(--Primary-500, #ff6636);
+}

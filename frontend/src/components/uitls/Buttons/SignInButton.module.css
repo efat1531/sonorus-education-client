@@ -1,0 +1,21 @@
+.buttonStyle {
+  padding: 0rem 1.5rem;
+  color: var(--Gray-White, #fff);
+
+  /* Button/M */
+  font-family: Inter;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 3rem; /* 300% */
+  letter-spacing: -0.008rem;
+  text-transform: capitalize;
+
+  background: var(--Primary-500, #ff6636);
+  border: none;
+}
+
+.buttonStyle:hover {
+  transition-duration: 200ms;
+  font-weight: 700;
+}

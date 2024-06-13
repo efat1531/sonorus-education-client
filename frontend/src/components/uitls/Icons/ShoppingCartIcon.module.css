@@ -1,0 +1,39 @@
+.icon {
+  position: relative;
+  width: 1.5rem;
+  height: 1.5rem;
+  stroke: black;
+}
+
+.innerCartRadius {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  display: inline-flex;
+  padding: 0.1875rem 0rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 5rem;
+  background: var(--Primary-500, #ff6636);
+  height: 1.4rem;
+  width: 1.4rem;
+}
+
+.innerCartText {
+  color: var(--Gray-White, #fff);
+  text-align: center;
+
+  /* Body Tiny/500 */
+  font-family: Inter;
+  font-size: 0.625rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 0.625rem; /* 100% */
+}
+
+.icon:hover {
+  cursor: pointer;
+  stroke: var(--Primary-500, #ff6636);
+}
