@@ -1,22 +1,30 @@
 import style from "./CourseSmall.module.css";
+import PeopleSVG from "../../../assets/svg/People.svg";
 
 import PropTypes from "prop-types";
 
 const CourseSmall = ({ course }) => {
-  const { imageSrc, category, price, title, rating, students } = course;
+  const { imageSrc, category, price, title, rating, students, discount } =
+    course;
   const numOfStudents =
     students > 1000 ? `${(students / 1000).toFixed(1)}k` : students;
   const studentLabel = students < 2 ? `student` : `students`;
-  const discount = 10;
-  const discountPercentage = discount ? (discount / price) * 100 : 0;
   return (
     <main className={style.container}>
       <img loading="lazy" src={imageSrc} className={style.mainImage} alt="" />
       <section className={style.contentSection}>
         <header className={style.header}>
-          <span className={style.tag}>{category}</span>
+          <span
+            className={style.tag}
+            style={{
+              backgroundColor: `${category.backgroundColor}`,
+              color: `${category.color}`,
+            }}
+          >
+            {category.name}
+          </span>
           <div>
-            {discount && (
+            {discount > 0 && (
               <span className={style.Discountprice}>
                 {price - discount}$&nbsp;
               </span>
@@ -24,7 +32,7 @@ const CourseSmall = ({ course }) => {
             <span
               className={style.price}
               style={
-                discount
+                discount > 0
                   ? {
                       textDecoration: "line-through",
                       color: "GrayText",
@@ -34,7 +42,8 @@ const CourseSmall = ({ course }) => {
                   : {}
               }
             >
-              {price}$
+              {price == 0 ? "Free" : price}
+              {price > 0 ? "$" : ""}
             </span>
           </div>
         </header>
@@ -46,6 +55,7 @@ const CourseSmall = ({ course }) => {
           ⭐<span>{rating}</span>
         </div>
         <div className={style.studentsInfo}>
+          <PeopleSVG />
           <span className={style.studentsCount}>{numOfStudents}</span>
           <span className={style.studentsLabel}>{studentLabel}</span>
         </div>

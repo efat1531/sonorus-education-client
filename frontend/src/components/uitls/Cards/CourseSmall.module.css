@@ -46,8 +46,6 @@
 }
 
 .tag {
-  background-color: var(--Primary-100, #ffeee8);
-  color: var(--Primary-700, #993d20);
   text-transform: uppercase;
   padding: 0.25rem 0.375rem;
   font: 500 0.625rem/120% Inter, -apple-system, Roboto, Helvetica, sans-serif;

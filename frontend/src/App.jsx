@@ -1,10 +1,11 @@
 import HomePage from "./pages/Homepage/HomePage";
+import CourseList from "./pages/CourseList/CourseList";
 import "../src/index.css";
 
 const App = () => {
   return (
     <div>
-      <HomePage />
+      <CourseList />
     </div>
   );
 };
