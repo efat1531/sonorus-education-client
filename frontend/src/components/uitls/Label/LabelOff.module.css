@@ -1,0 +1,20 @@
+.mainContainer {
+  display: flex;
+  padding: 0.5rem 0.75rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  background: var(--Primary-100, #ffeee8);
+}
+
+.labelOff {
+  color: var(--Primary-500, #ff6636);
+
+  /* Labal/Large */
+  font-family: Inter;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%; /* 0.875rem */
+  text-transform: uppercase;
+}

@@ -17,4 +17,5 @@
   background-color: #faded5;
   font-weight: 700;
   transition-duration: 200ms;
+  color: var(--Primary-500, #ff6650);
 }

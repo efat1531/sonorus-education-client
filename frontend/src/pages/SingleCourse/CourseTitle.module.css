@@ -1,0 +1,111 @@
+.sectionContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+  max-width: 54.5rem;
+  gap: 1.5rem;
+}
+
+.courseTitle {
+  color: var(--Gray-900, #1d2026);
+  font-family: Inter;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 2.5rem; /* 125% */
+  letter-spacing: -0.02rem;
+}
+
+.courseSummary {
+  color: var(--Gray-700, #4e5566);
+  font-family: Inter;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2rem; /* 160% */
+}
+
+.teacherRating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.teacherInfo {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.teacherImg {
+  width: 3.125rem;
+  height: 3.125rem;
+  flex-shrink: 0;
+}
+
+.teacherImg > img {
+  width: 3.125rem;
+  height: 3.125rem;
+  border-radius: 3.125rem;
+  border: 2px solid var(--Gray-White, #fff);
+}
+
+.teacherName {
+  display: flex;
+  flex-direction: column;
+}
+
+.createdBy {
+  color: var(--Gray-600, #6e7485);
+  /* Body Medium/400 */
+  font-family: Inter;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.375rem; /* 157.143% */
+  letter-spacing: -0.00875rem;
+}
+
+.orginalName {
+  color: var(--Gray-900, #1d2026);
+
+  /* Body Large/500 */
+  font-family: Inter;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.375rem; /* 137.5% */
+}
+
+.ratingInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ratingShow {
+  color: var(--Gray-900, #1d2026);
+
+  /* Body Large/500 */
+  font-family: Inter;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.375rem; /* 137.5% */
+}
+
+.numOfRatings {
+  color: var(--Gray-600, #6e7485);
+
+  /* Body Medium/400 */
+  font-family: Inter;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.375rem; /* 157.143% */
+  letter-spacing: -0.00875rem;
+}
