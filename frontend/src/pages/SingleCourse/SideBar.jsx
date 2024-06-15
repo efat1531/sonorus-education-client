@@ -3,6 +3,8 @@ import PriceCard from "../../components/uitls/Cards/PriceCard";
 import Divider from "../../components/uitls/Divider";
 import FeatureCard from "../../components/uitls/Cards/FeatureCard";
 import ButtonTemplate from "../../components/uitls/Buttons/ButtonTemplate";
+import CourseIncludeCard from "../../components/uitls/Cards/CourseIncludeCard";
+import ShareSocial from "../../components/uitls/Label/ShareSocial";
 
 const SideBar = () => {
   const price = 100;
@@ -39,7 +41,10 @@ const SideBar = () => {
       <Divider width="26.5rem" />
       <div className={style.cIncludeSection}>
         <div className={style.text}>This course includes:</div>
+        <CourseIncludeCard />
       </div>
+      <Divider width="26.5rem" />
+      <ShareSocial />
     </div>
   );
 };

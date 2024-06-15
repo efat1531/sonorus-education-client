@@ -1,0 +1,28 @@
+.mainContainer {
+  display: flex;
+  width: 54.5rem;
+  padding: 2.5rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  background: rgba(225, 247, 227, 0.4);
+}
+
+.title {
+  color: var(--Gray-900, #1d2026);
+  text-align: left;
+  width: 49.5rem;
+  font-family: Inter;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 2rem; /* 133.333% */
+  letter-spacing: -0.015rem;
+}
+
+.points {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 1.5rem;
+  column-gap: 1.25rem;
+}

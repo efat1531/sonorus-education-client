@@ -1,0 +1,43 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: start;
+  width: 54.5rem;
+}
+
+.heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 54.5rem;
+}
+
+.title {
+  color: var(--Gray-900, #1d2026);
+  text-align: center;
+
+  /* Heading/04 */
+  font-family: Inter;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 2rem; /* 133.333% */
+  letter-spacing: -0.015rem;
+}
+
+.funFact {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.curriculamContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid var(--Gray-100, #e9eaf0);
+  background: var(--Gray-White, #fff);
+}

@@ -2,6 +2,10 @@ import style from "./SingleCourse.module.css";
 import CourseTitle from "./CourseTitle";
 import VideoPlayer from "../../components/uitls/Cards/VideoPlayer";
 import MenuList from "./MenuList";
+import CourseDesciption from "./CourseDescription";
+import WhatYouWillLearn from "./WhatYouWillLearn";
+import CourseRequirement from "./CourseRequirement";
+import CourseCurriculam from "../../components/Accordion/CourseCurriculam";
 
 const SingleCourse = () => {
   return (
@@ -9,6 +13,10 @@ const SingleCourse = () => {
       <CourseTitle />
       <VideoPlayer width={872} height={492} videoID={`DCoIeGt4g7M`} />
       <MenuList />
+      <CourseDesciption />
+      <WhatYouWillLearn />
+      <CourseRequirement />
+      <CourseCurriculam />
     </div>
   );
 };

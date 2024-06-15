@@ -7,12 +7,24 @@ import BarChart from "./BarChart.svg";
 import Clock from "./Clock.svg";
 import NoteBook from "./NoteBook.svg";
 import Students from "./Students.svg";
+import Monitor from "./Monitor.svg";
+import NotePad from "./NotePad.svg";
+import Stack from "./Stack.svg";
+import CopyIcon from "./CopyIcon.svg";
+import FolderIcon from "./Folder.svg";
+import PlayCircleIcon from "./PlayCircle.svg";
 
 const svgMap = {
   BarChart,
   Clock,
   NoteBook,
   Students,
+  Monitor,
+  NotePad,
+  Stack,
+  CopyIcon,
+  FolderIcon,
+  PlayCircleIcon,
 };
 
 const SVGController = ({

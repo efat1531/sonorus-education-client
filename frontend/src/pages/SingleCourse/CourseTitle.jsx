@@ -2,10 +2,14 @@ import style from "./CourseTitle.module.css";
 import StarRatingCard from "../../components/uitls/Cards/StarRatingCard";
 
 const imageURL = "https://picsum.photos/200/200.jpg";
+const cateGory = "Development";
 
 const CourseTitle = () => {
   return (
     <div className={style.sectionContainer}>
+      <div className={style.courseLink}>
+        <div>Home</div> <div>{">"}</div> <div>{cateGory}</div>
+      </div>
       {/* Title */}
       <div className={style.courseTitle}>
         Complete Website Responsive Design: from Figma to Webflow to Website

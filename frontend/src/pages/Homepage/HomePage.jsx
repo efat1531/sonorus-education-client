@@ -3,7 +3,7 @@ import HeroImage1 from "./HeroImage1";
 import HeroImage2 from "./HeroImage2";
 import HeroSection from "./HeroSection";
 import TopInstructor from "./TopInstructor";
-import HomePageCourseTemplate from "../../components/CourseStructure/CourseTemplate/HomePageCourseTemplate";
+import HomePageCourseTemplate from "../../components/uitls/Template/HomePageCourseTemplate";
 import Footer from "../../components/Footer/Footer";
 
 const coursesJSON = [

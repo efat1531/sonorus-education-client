@@ -1,0 +1,41 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.12rem;
+  width: 23.5rem;
+}
+
+.titleText {
+  color: var(--Gray-900, #1d2026);
+
+  /* Body Large/500 */
+  font-family: Inter;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.375rem; /* 137.5% */
+}
+
+.socialIcons {
+  display: flex;
+  gap: 0.75rem;
+  --stroke-color: #4e5566;
+}
+
+.socialIcons:hover,
+.socialIcons:active {
+  cursor: pointer;
+  --stroke-color: #ff6636;
+}
+
+.copyText {
+  color: var(--stroke-color);
+
+  /* Body Medium/500 */
+  font-family: Inter;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.25rem; /* 142.857% */
+  letter-spacing: -0.00875rem;
+}

@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import style from "./HomePageCourseTemplate.module.css";
-import CourseSmall from "../../uitls/Cards/CourseSmall";
+import CourseSmall from "../Cards/CourseSmall";
 
 const HomePageTemplate = ({ title, courses }) => {
   return (
