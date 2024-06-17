@@ -4,32 +4,35 @@
 @tailwind utilities;
 
 .nav-link {
-    @apply hover:scale-105 hover:text-white hover:font-[600] hover:duration-200;
+  @apply hover:scale-105 hover:text-white hover:font-[600] hover:duration-200;
 }
 
 h1 {
-    @apply text-4xl sm:text-5xl font-semibold
+  @apply text-4xl sm:text-5xl font-semibold;
 }
 
 h2 {
-    @apply text-2xl sm:text-4xl font-bold mb-2
+  @apply text-2xl sm:text-4xl font-bold mb-2;
+}
+
+h3 {
+  @apply text-xl sm:text-4xl font-bold mb-2;
 }
 
 h4 {
-    @apply text-lg font-semibold mb-2 uppercase
+  @apply text-lg font-semibold mb-2 uppercase;
 }
 
 .btn-primary {
-    @apply bg-orange-500 text-white px-4 py-2 mt-4 hover:bg-orange-600 font-semibold
+  @apply bg-orange-500 text-white px-4 py-2 mt-4 hover:bg-orange-600 font-semibold;
 }
 
 .btn-secondary {
-    @apply bg-zinc-700 text-white px-4 py-2 mt-4 hover:bg-zinc-900 font-semibold
+  @apply bg-zinc-700 text-white px-4 py-2 mt-4 hover:bg-zinc-900 font-semibold;
 }
 
-
 @layer utilities {
-    .clip-path-image-landing-page {
-        clip-path: polygon(8% 0, 100% 0, 100% 100%, 0% 100%);
-    }
+  .clip-path-image-landing-page {
+    clip-path: polygon(8% 0, 100% 0, 100% 100%, 0% 100%);
+  }
 }
