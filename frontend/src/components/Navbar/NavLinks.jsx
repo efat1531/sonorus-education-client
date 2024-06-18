@@ -1,24 +1,25 @@
+import { Link } from "react-router-dom";
 const NavLinks = () => {
   return (
     <div className="flex *:px-4 *:py-4 gap-[0.625rem] *:font-medium *:tracking-[-.00875rem] *:text-sm">
-      <a href="#" className="nav-link">
+      <Link to="/" className="nav-link">
         Home
-      </a>
-      <a href="#" className="nav-link">
+      </Link>
+      <Link to="#" className="nav-link">
         Why Learn
-      </a>
-      <a href="#" className="nav-link">
+      </Link>
+      <Link to="/about" className="nav-link">
         About
-      </a>
-      <a href="#" className="nav-link">
+      </Link>
+      <Link to="/contact" className="nav-link">
         Contact
-      </a>
-      <a href="#" className="nav-link">
+      </Link>
+      <Link to="#" className="nav-link">
         Resources
-      </a>
-      <a href="#" className="nav-link">
+      </Link>
+      <Link to="#" className="nav-link">
         Store
-      </a>
+      </Link>
     </div>
   );
 };

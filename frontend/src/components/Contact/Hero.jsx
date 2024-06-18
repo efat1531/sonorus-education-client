@@ -14,7 +14,7 @@ const Hero = () => {
         <Button title="Copy Email" secondary />
       </div>
       {/* Image */}
-      <div className="justify-end w-full mt-8 lg:mt-0">
+      <div className="justify-end max-w-[1000px] ms-auto mt-8 lg:mt-0">
         <div>
           <img src={ContactBanner} alt="" />
         </div>

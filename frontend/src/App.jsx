@@ -3,6 +3,7 @@ import DashboardLayout from "./components/DashboardLayout";
 import Layout from "./components/Layout";
 import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
+import FAQ from "./pages/FAQ";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -49,6 +50,14 @@ function App() {
           element={
             <Layout>
               <AboutUs />
+            </Layout>
+          }
+        />
+        <Route
+          path="/faq"
+          element={
+            <Layout>
+              <FAQ />
             </Layout>
           }
         />

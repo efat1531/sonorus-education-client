@@ -14,7 +14,7 @@ const Hero = () => {
         </p>
       </div>
       {/* Image */}
-      <div className="justify-end w-full">
+      <div className="justify-end max-w-[1000px] ms-auto w-full">
         <div>
           <img src={AboutUsBanner} alt="About Us Banner" />
         </div>
