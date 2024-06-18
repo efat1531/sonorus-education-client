@@ -1,6 +1,8 @@
 import PageHeader from "../components/Common/PageHeader";
+import Branches from "../components/Contact/Branches";
 import ContactUs from "../components/Contact/ContactUs";
 import Hero from "../components/Contact/Hero";
+import Map from "../components/Contact/Map";
 
 const Contact = () => {
   return (
@@ -13,7 +15,9 @@ const Contact = () => {
         ]}
       />
       <Hero />
+      <Branches />
       <ContactUs />
+      <Map />
     </div>
   );
 };

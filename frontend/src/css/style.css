@@ -1,7 +1,7 @@
 :root {
-  --primary-color: #EA580C;
-  --secondary-color: #3F3F46;
-  --secondary-text-color: #8C94A3;
+  --primary-color: #ea580c;
+  --secondary-color: #3f3f46;
+  --secondary-text-color: #8c94a3;
 }
 
 /* Global */
@@ -24,6 +24,7 @@ img {
 /* Utility */
 .container {
   margin: auto;
+  padding: 0 0.5rem;
 }
 
 .hero-img {

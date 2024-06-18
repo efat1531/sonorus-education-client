@@ -48,7 +48,7 @@ const ContactForm = () => {
             label="Message"
             id="subject"
             type="text"
-            placeholder="Message Subject"
+            placeholder="Message"
           />
         </div>
         <div className="mt-4">

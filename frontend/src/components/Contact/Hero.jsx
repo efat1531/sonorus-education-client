@@ -2,9 +2,9 @@ import ContactBanner from "../../assets/images/contact.png";
 import Button from "../ui/Button";
 const Hero = () => {
   return (
-    <section className="container flex gap-4 items-center pt-4">
+    <section className="container flex flex-col lg:flex-row gap-4 items-center pt-16 lg:pt-4">
       {/* Text */}
-      <div className="max-w-[380px] space-y-6">
+      <div className="max-w-[380px] space-y-6 text-center lg:text-start">
         <h1>Connect with us</h1>
         <p className="text-gray-600">
           Want to chat? We’d love to hear from you! Get in touch with our
@@ -14,7 +14,7 @@ const Hero = () => {
         <Button title="Copy Email" secondary />
       </div>
       {/* Image */}
-      <div className="flex justify-end w-full">
+      <div className="justify-end w-full mt-8 lg:mt-0">
         <div>
           <img src={ContactBanner} alt="" />
         </div>

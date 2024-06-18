@@ -8,7 +8,7 @@ const ContactUs = () => {
           <h2>Contact Us</h2>
         </div>
         {/* Contact Section */}
-        <div className="flex gap-16 mt-8">
+        <div className="flex flex-col lg:flex-row gap-16 mt-8">
           {/* Details */}
           <div className="w-full">
             <p className="text-2xl">
