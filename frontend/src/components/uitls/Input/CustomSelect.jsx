@@ -16,15 +16,29 @@ const DropdownIndicator = (props) => {
   );
 };
 
-const CustomSelect = ({ options, setSelectedOption, selectedOption }) => {
+const Placeholder = (props) => {
+  return (
+    <components.Placeholder {...props}>{props.children}</components.Placeholder>
+  );
+};
+
+const CustomSelect = ({
+  options,
+  setSelectedOption,
+  selectedOption = null,
+  customPlaceholder,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const customComponents = {
     DropdownIndicator: (props) => (
       <DropdownIndicator {...props} isOpen={isOpen} />
     ),
+    Placeholder: (props) => (
+      <Placeholder {...props} children={customPlaceholder} />
+    ),
   };
 
-  const defaultStyles = {
+  const customStyles = {
     control: (provided, state) => {
       return {
         ...provided,
@@ -39,13 +53,23 @@ const CustomSelect = ({ options, setSelectedOption, selectedOption }) => {
         },
       };
     },
-  };
-
-  const customStyles = {
-    control: (provided, state) => ({
-      ...defaultStyles.control(provided, state),
-      ...style,
-    }),
+    option: (provided, state) => {
+      const hoverColor = state.data.hoverColor;
+      const textColor = state.data.textColor;
+      return {
+        ...provided,
+        backgroundColor: state.isSelected
+          ? hoverColor
+          : state.isFocused
+          ? hoverColor
+          : "#fff",
+        color: state.isSelected
+          ? textColor
+          : state.isFocused
+          ? textColor
+          : "#000",
+      };
+    },
   };
 
   return (
@@ -65,6 +89,7 @@ CustomSelect.propTypes = {
   options: PropTypes.array.isRequired,
   setSelectedOption: PropTypes.func.isRequired,
   selectedOption: PropTypes.oneOfType([PropTypes.object, PropTypes.number]),
+  customPlaceholder: PropTypes.string,
 };
 
 export default CustomSelect;

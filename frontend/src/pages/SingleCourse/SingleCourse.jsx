@@ -9,6 +9,7 @@ import CourseCurriculam from "../../components/Accordion/CourseCurriculam";
 import TeacherInfo from "./TeacherInfo";
 import WriteReview from "./WriteReview";
 import CourseRating from "./CourseRating";
+import StudentsRating from "./StudentsRating";
 
 const SingleCourse = () => {
   return (
@@ -23,6 +24,7 @@ const SingleCourse = () => {
       <TeacherInfo />
       <WriteReview />
       <CourseRating />
+      <StudentsRating />
     </div>
   );
 };

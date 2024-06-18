@@ -1,5 +1,5 @@
 import style from "./MainCourses.module.css";
-import CustomSelect from "./CustomSelect";
+import CustomSelect from "../../components/uitls/Input/CustomSelect";
 import CourseSmall from "../../components/uitls/Cards/CourseSmall";
 import { useEffect, useState } from "react";
 
@@ -16,6 +16,7 @@ const courses = [
       color: "#342F98",
       backgroundColor: "#EBEBFF",
     },
+    createAt: new Date("24-06-09"),
   },
   {
     title: "Beginner to Pro in Excel: Financial Modeling and Valuation",
@@ -29,6 +30,7 @@ const courses = [
       color: "#F2994A",
       backgroundColor: "#FFF2E8",
     },
+    createAt: new Date("24-06-10"),
   },
   {
     title: "Beginner to Pro in Excel: Financial Modeling and Valuation",
@@ -42,6 +44,7 @@ const courses = [
       color: "#4CAF50",
       backgroundColor: "#E8F0F7",
     },
+    createAt: new Date("24-06-11"),
   },
 
   {
@@ -56,6 +59,7 @@ const courses = [
       color: "#342F98",
       backgroundColor: "#EBEBFF",
     },
+    createAt: new Date("24-06-12"),
   },
   {
     title: "Beginner to Pro in Excel: Financial Modeling and Valuation",
@@ -69,6 +73,7 @@ const courses = [
       color: "#342F98",
       backgroundColor: "#EBEBFF",
     },
+    createAt: new Date("24-06-13"),
   },
 ];
 
@@ -111,27 +116,43 @@ const options = [
   },
 ];
 
+const calculatedPrice = (price, discount) => {
+  return price - discount;
+};
+
 const MainCourses = () => {
-  const [selectedOption, setSelectedOption] = useState(0);
+  const [selectedOption, setSelectedOption] = useState(null);
+
   const [newCourses, setNewCourses] = useState(courses);
   useEffect(() => {
-    newCourses.sort((a, b) => {
-      switch (selectedOption.value) {
-        case "trending":
-          return b.rating - a.rating;
-        case "newest":
-          return b.students - a.students;
-        case "priceLow":
-          return b.price - a.price;
-        case "priceHigh":
-          return a.price - b.price;
-        case "rating":
-          return b.rating - a.rating;
-        case "students":
-          return b.students - a.students;
-        default:
-          return 0;
-      }
+    setNewCourses((prevCourses) => {
+      return [...prevCourses].sort((a, b) => {
+        if (selectedOption) {
+          switch (selectedOption.value) {
+            case "trending":
+              return b.rating - a.rating;
+            case "newest":
+              return b.createAt - a.createAt;
+            case "priceHigh":
+              return (
+                calculatedPrice(b.price, b.discount) -
+                calculatedPrice(a.price, a.discount)
+              );
+            case "priceLow":
+              return (
+                calculatedPrice(a.price, a.discount) -
+                calculatedPrice(b.price, b.discount)
+              );
+            case "rating":
+              return b.rating - a.rating;
+            case "students":
+              return b.students - a.students;
+            default:
+              return 0;
+          }
+        }
+        return 0;
+      });
     });
   }, [selectedOption]);
 
@@ -154,6 +175,7 @@ const MainCourses = () => {
           <div className={style.filterSection}>
             <div className={style.sortText}>Sort By :</div>
             <CustomSelect
+              customPlaceholder={"Select an option"}
               options={options}
               setSelectedOption={setSelectedOption}
               selectedOption={selectedOption}
