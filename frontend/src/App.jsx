@@ -6,7 +6,8 @@ import "../src/index.css";
 const App = () => {
   return (
     <div>
-      <SingleCourseMainPage />
+      {/* <SingleCourseMainPage /> */}
+      <CourseList />
     </div>
   );
 };

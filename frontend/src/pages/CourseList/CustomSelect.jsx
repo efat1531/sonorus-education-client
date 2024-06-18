@@ -1,9 +1,30 @@
 import style from "./CustomSelect.module.css";
-import ReactSelect from "react-select";
+import ReactSelect, { components } from "react-select";
 import PropTypes from "prop-types";
+import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+
+const DropdownIndicator = (props) => {
+  const { isOpen } = props;
+  return (
+    <components.DropdownIndicator {...props}>
+      <div style={{ transform: isOpen ? "rotate(180deg)" : "none" }}>
+        <FontAwesomeIcon icon={faChevronDown} />
+      </div>
+    </components.DropdownIndicator>
+  );
+};
 
 const CustomSelect = ({ options, setSelectedOption, selectedOption }) => {
-  const customStyles = {
+  const [isOpen, setIsOpen] = useState(false);
+  const customComponents = {
+    DropdownIndicator: (props) => (
+      <DropdownIndicator {...props} isOpen={isOpen} />
+    ),
+  };
+
+  const defaultStyles = {
     control: (provided, state) => {
       return {
         ...provided,
@@ -18,45 +39,32 @@ const CustomSelect = ({ options, setSelectedOption, selectedOption }) => {
         },
       };
     },
-    option: (provided, state) => {
-      const hoverColor = state.data.hoverColor;
-      const textColor = state.data.textColor;
-      console.log(provided, hoverColor, textColor, state);
-      return {
-        ...provided,
-        backgroundColor: state.isSelected
-          ? hoverColor
-          : state.isFocused
-          ? hoverColor
-          : "#fff",
-        color: state.isSelected
-          ? textColor
-          : state.isFocused
-          ? textColor
-          : "#000",
-      };
-    },
   };
+
+  const customStyles = {
+    control: (provided, state) => ({
+      ...defaultStyles.control(provided, state),
+      ...style,
+    }),
+  };
+
   return (
-    <div>
-      <ReactSelect
-        className={style.select}
-        styles={customStyles}
-        value={selectedOption}
-        onChange={setSelectedOption}
-        options={options}
-      />
-    </div>
+    <ReactSelect
+      styles={customStyles}
+      components={customComponents}
+      options={options}
+      onChange={setSelectedOption}
+      value={selectedOption}
+      onMenuOpen={() => setIsOpen(true)}
+      onMenuClose={() => setIsOpen(false)}
+    />
   );
 };
 
 CustomSelect.propTypes = {
-  options: PropTypes.arrayOf(
-    PropTypes.shape({
-      value: PropTypes.string.isRequired,
-      label: PropTypes.string.isRequired,
-    })
-  ).isRequired,
+  options: PropTypes.array.isRequired,
+  setSelectedOption: PropTypes.func.isRequired,
+  selectedOption: PropTypes.oneOfType([PropTypes.object, PropTypes.number]),
 };
 
 export default CustomSelect;

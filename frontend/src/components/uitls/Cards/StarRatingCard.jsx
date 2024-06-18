@@ -31,7 +31,7 @@ const starRating = (rating, size, color) => {
     );
   }
 
-  for (let i = 0; i < 5 - stars.length; i++) {
+  for (let i = stars.length; i < 5; i++) {
     stars.push(
       <FontAwesomeIcon
         icon={faStarRegular}

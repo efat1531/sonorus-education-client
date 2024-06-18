@@ -6,6 +6,9 @@ import CourseDesciption from "./CourseDescription";
 import WhatYouWillLearn from "./WhatYouWillLearn";
 import CourseRequirement from "./CourseRequirement";
 import CourseCurriculam from "../../components/Accordion/CourseCurriculam";
+import TeacherInfo from "./TeacherInfo";
+import WriteReview from "./WriteReview";
+import CourseRating from "./CourseRating";
 
 const SingleCourse = () => {
   return (
@@ -17,6 +20,9 @@ const SingleCourse = () => {
       <WhatYouWillLearn />
       <CourseRequirement />
       <CourseCurriculam />
+      <TeacherInfo />
+      <WriteReview />
+      <CourseRating />
     </div>
   );
 };

@@ -1,13 +1,8 @@
 import SVGController from "../../../assets/svg/SVGController";
+import PropTypes from "prop-types";
 
-const styles = {
-  container: {
-    display: "flex",
-    alignItems: "center",
-    flexDirection: "row",
-    gap: "0.5rem",
-  },
-  text: {
+const IconTextLabel = ({ text, textStyle, iconStyle }) => {
+  const defaultTextStyle = {
     color: "#4E5566",
     fontFamily: "Inter",
     fontSize: "0.875rem",
@@ -15,21 +10,45 @@ const styles = {
     fontWeight: 400,
     lineHeight: "1.375rem",
     letterSpacing: "-0.00875rem",
-  },
-};
+  };
+  const defaultIconStyle = {
+    name: "Star",
+    width: "1.5rem",
+    height: "1.5rem",
+    stroke: "none",
+    fill: "none",
+  };
 
-const IconTextLabel = ({ name, text }) => {
+  const finalTextStyle = { ...defaultTextStyle, ...textStyle };
+  const finalIconStyle = { ...defaultIconStyle, ...iconStyle };
+
+  const styles = {
+    container: {
+      display: "flex",
+      alignItems: "center",
+      flexDirection: "row",
+      gap: "0.5rem",
+    },
+  };
+
   return (
     <div style={styles.container}>
       <SVGController
-        name={name}
-        width="1.25rem"
-        height="1.25rem"
-        stroke="#FF6636"
+        name={finalIconStyle.name}
+        width={finalIconStyle.width}
+        height={finalIconStyle.iconHeight}
+        stroke={finalIconStyle.stroke}
+        fill={finalIconStyle.fill}
       />
-      <div style={styles.text}>{text}</div>
+      <div style={finalTextStyle}>{text}</div>
     </div>
   );
+};
+
+IconTextLabel.propTypes = {
+  text: PropTypes.string.isRequired,
+  textStyle: PropTypes.object,
+  iconStyle: PropTypes.object,
 };
 
 export default IconTextLabel;

@@ -13,6 +13,8 @@ import Stack from "./Stack.svg";
 import CopyIcon from "./CopyIcon.svg";
 import FolderIcon from "./Folder.svg";
 import PlayCircleIcon from "./PlayCircle.svg";
+import Star from "./Star.svg";
+import PlayerIcon from "./PlayerIcon.svg";
 
 const svgMap = {
   BarChart,
@@ -25,6 +27,8 @@ const svgMap = {
   CopyIcon,
   FolderIcon,
   PlayCircleIcon,
+  Star,
+  PlayerIcon,
 };
 
 const SVGController = ({

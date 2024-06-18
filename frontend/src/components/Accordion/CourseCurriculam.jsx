@@ -92,12 +92,18 @@ const CourseCurriculam = () => {
       <div className={style.heading}>
         <div className={style.title}>Curriculam</div>
         <div className={style.funFact}>
-          <IconTextLabel name="FolderIcon" text={`${totalSections} Sections`} />
           <IconTextLabel
-            name="PlayCircleIcon"
+            iconStyle={{ name: "FolderIcon", stroke: "#FF6636" }}
+            text={`${totalSections} Sections`}
+          />
+          <IconTextLabel
+            iconStyle={{ name: "PlayCircleIcon", stroke: "#564FFD" }}
             text={`${totalLesson} Lessons`}
           />
-          <IconTextLabel name="Clock" text={convertDuration(totalDuration)} />
+          <IconTextLabel
+            iconStyle={{ name: "Clock", stroke: "#FD8E1F" }}
+            text={convertDuration(totalDuration)}
+          />
         </div>
       </div>
       <div className={style.curriculamContainer}>

@@ -60,11 +60,11 @@ const CourseCurriculamCard = ({ courseSection }) => {
         </div>
         <div className={style.funFact}>
           <IconTextLabel
-            name="PlayCircleIcon"
+            iconStyle={{ name: "PlayCircleIcon", stroke: "#564FFD" }}
             text={`${totalLectures(courseSection)} Lessons`}
           />
           <IconTextLabel
-            name="Clock"
+            iconStyle={{ name: "Clock", stroke: "#FD8E1F" }}
             text={formatDuration(totalDuration(courseSection))}
           />
         </div>
