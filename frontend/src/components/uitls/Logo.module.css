@@ -1,19 +1,11 @@
-.mainText {
-  color: var(--Gray-900, #1d2026);
-  font-family: Inter;
-  font-size: 2rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 124%; /* 2.48rem */
-  letter-spacing: -0.06rem;
-}
-
 .logo {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: center;
   gap: 0.5rem;
+  text-decoration: none;
 }
 
-.a {
-  text-decoration: none;
+.logoText {
+  font-family: Inter;
 }

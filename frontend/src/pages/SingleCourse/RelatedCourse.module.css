@@ -1,0 +1,63 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: center;
+  background: var(--Gray-White, #fff);
+  padding: 5rem 0rem;
+
+  /* Line/Top */
+  box-shadow: 0px 1px 0px 0px #e9eaf0 inset;
+}
+
+.heading {
+  display: flex;
+  width: 82.5rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  color: var(--Gray-900, #1d2026);
+
+  /* Heading/02 */
+  font-family: Inter;
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 3rem; /* 120% */
+  letter-spacing: -0.025rem;
+}
+
+.viewAllBtn {
+  display: flex;
+  padding: 0rem 1.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--Primary-100, #ffeee8);
+}
+
+.viewAllBtn:hover {
+  background: var(--Primary-200, #ffded3);
+}
+
+.btnText {
+  color: var(--Primary-500, #ff6636);
+
+  /* Button/M */
+  font-family: Inter;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 3rem; /* 300% */
+  letter-spacing: -0.008rem;
+  text-transform: capitalize;
+}
+
+.courseContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 82.5rem;
+}

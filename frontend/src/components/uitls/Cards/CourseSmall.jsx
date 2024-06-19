@@ -1,6 +1,8 @@
 import style from "./CourseSmall.module.css";
-import PeopleSVG from "../../../assets/svg/People.svg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
+import SVGController from "../../../assets/svg/SVGController";
 
 import PropTypes from "prop-types";
 
@@ -53,10 +55,20 @@ const CourseSmall = ({ course }) => {
       <hr className={style.divider} />
       <footer className={style.footer}>
         <div className={style.rating}>
-          ⭐<span>{rating}</span>
+          <FontAwesomeIcon
+            icon={faStar}
+            size="1x"
+            style={{ color: "#FD8E1F" }}
+          />
+          <span>{rating}</span>
         </div>
         <div className={style.studentsInfo}>
-          <PeopleSVG />
+          <SVGController
+            name={"PeopleIcon"}
+            width="1.25rem"
+            height="1.25rem"
+            stroke="#564FFD"
+          />
           <span className={style.studentsCount}>{numOfStudents}</span>
           <span className={style.studentsLabel}>{studentLabel}</span>
         </div>

@@ -15,6 +15,8 @@ import FolderIcon from "./Folder.svg";
 import PlayCircleIcon from "./PlayCircle.svg";
 import Star from "./Star.svg";
 import PlayerIcon from "./PlayerIcon.svg";
+import PeopleIcon from "./People.svg";
+import GraduationCap from "./GraducationCap.svg";
 
 const svgMap = {
   BarChart,
@@ -29,6 +31,8 @@ const svgMap = {
   PlayCircleIcon,
   Star,
   PlayerIcon,
+  PeopleIcon,
+  GraduationCap,
 };
 
 const SVGController = ({
