@@ -1,6 +1,7 @@
 import style from "./CourseRating.module.css";
 import StarRatingCard from "../../components/uitls/Cards/StarRatingCard";
 import RatingProgressBar from "../../components/uitls/Label/RatingProgressBar";
+import React from "react";
 
 const CourseRating = () => {
   const rating = 4.8;

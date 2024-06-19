@@ -7,6 +7,7 @@ import NavImage from "../uitls/ImageCovers/NavImage";
 import NotificationIcon from "../uitls/Icons/NotificationIcon";
 import FavouriteIcon from "../uitls/Icons/FavouritesIcon";
 import ShoppingCartIcon from "../uitls/Icons/ShoppingCartIcon";
+import React from "react";
 
 const NavBarDesktop = () => {
   const user = false;

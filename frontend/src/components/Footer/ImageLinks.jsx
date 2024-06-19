@@ -1,5 +1,6 @@
 import style from "./ImageLinks.module.css";
 import Proptypes from "prop-types";
+import React from "react";
 
 const iconURL = "src/assets/svg/";
 

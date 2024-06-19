@@ -1,6 +1,7 @@
 import style from "./RequirementList.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckDouble, faCheck } from "@fortawesome/free-solid-svg-icons";
+import React from "react";
 import PropTypes from "prop-types";
 
 const RequirementList = ({ requirement }) => {

@@ -1,5 +1,6 @@
 import React from "react";
 import YouTube from "react-youtube";
+import PropTypes from "prop-types";
 
 const VideoPlayer = ({ videoID, width, height }) => {
   const optObj = {
@@ -28,6 +29,12 @@ const VideoPlayer = ({ videoID, width, height }) => {
       onError={_onError} // defaults -> noop
     />
   );
+};
+
+VideoPlayer.propTypes = {
+  videoID: PropTypes.string.isRequired,
+  width: PropTypes.number.isRequired,
+  height: PropTypes.number.isRequired,
 };
 
 export default VideoPlayer;

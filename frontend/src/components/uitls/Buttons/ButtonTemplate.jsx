@@ -1,14 +1,8 @@
 import style from "./ButtonTemplate.module.css";
 import PropTypes from "prop-types";
+import React from "react";
 
-const ButtonTemplate = ({
-  padding,
-  width,
-  backgroundColor,
-  btnText,
-  btnTextColor,
-  onClick,
-}) => {
+const ButtonTemplate = ({ width, backgroundColor, btnText, btnTextColor }) => {
   return (
     <button
       className={style.mainContainer}

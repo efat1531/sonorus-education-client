@@ -2,6 +2,7 @@ import style from "./CourseCurriculam.module.css";
 import IconTextLabel from "../uitls/Label/IconTextLabel";
 import CourseCurriculamCard from "../uitls/Cards/CourseCurriculamCard";
 import Divider from "../uitls/Divider";
+import React from "react";
 
 const demoCurriculam = [
   {

@@ -1,5 +1,6 @@
 import style from "./CourseIncludeCard.module.css";
 import FeatureIncludeLabel from "../Label/FeatureIncludeLabel";
+import React from "react";
 
 const CourseIncludesCard = () => {
   return (

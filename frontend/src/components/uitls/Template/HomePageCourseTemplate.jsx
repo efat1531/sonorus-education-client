@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import style from "./HomePageCourseTemplate.module.css";
 import CourseSmall from "../Cards/CourseSmall";
+import React from "react";
 
 const HomePageTemplate = ({ title, courses }) => {
   return (

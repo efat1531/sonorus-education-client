@@ -1,5 +1,6 @@
 import style from "./QuickLinks.module.css";
 import Proptypes from "prop-types";
+import React from "react";
 const QuickLinks = ({ label }) => {
   return (
     <div className={style.quickLink}>

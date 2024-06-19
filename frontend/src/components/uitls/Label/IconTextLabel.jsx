@@ -1,5 +1,6 @@
 import SVGController from "../../../assets/svg/SVGController";
 import PropTypes from "prop-types";
+import React from "react";
 
 const IconTextLabel = ({ text, textStyle, iconStyle }) => {
   const defaultTextStyle = {

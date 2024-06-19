@@ -1,4 +1,5 @@
 import style from "./HeroImage1.module.css";
+import React from "react";
 
 const HeroImage1 = () => {
   return (

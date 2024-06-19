@@ -1,4 +1,6 @@
 import style from "./InstructorCard.module.css";
+import React from "react";
+
 const rating = 5;
 const count = 2759;
 const description = `student${count < 2 ? "" : "s"}`;

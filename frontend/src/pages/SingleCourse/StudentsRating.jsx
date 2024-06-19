@@ -1,5 +1,5 @@
 import style from "./StudentsRating.module.css";
-import { useState } from "react";
+import { useState, React } from "react";
 import CustomSelect from "../../components/uitls/Input/CustomSelect";
 import StudentFeedbackCard from "../../components/uitls/Cards/StudentFeedbackCard";
 import Divider from "../../components/uitls/Divider";
@@ -37,7 +37,7 @@ const ratings = [
     name: "David Kim",
     date: new Date("2024-06-13"),
     feedback:
-      "The course content seemed good, but there were some missing details that made it difficult to follow along at times. I would recommend this with reservations.",
+      "The course content seemed good, but there were some missing details that made it difficult to follow along at times. I would recommend this with reservations.&apos;",
   },
   {
     rating: 4,
@@ -93,29 +93,37 @@ const options = [
 const StudentsRating = () => {
   const [selectedOption, setSelectedOption] = useState(options[4]);
   const [visibleReviews, setVisibleReviews] = useState(2);
+  const filteredAndSortedRatings = ratings
+    .filter((rating) => rating.rating <= parseInt(selectedOption.value))
+    .sort((a, b) => b.rating - a.rating);
+
+  const length = filteredAndSortedRatings.length;
 
   const handleLoadMore = () => {
     setVisibleReviews((prevVisibleReviews) => prevVisibleReviews + 2);
   };
 
+  const handleOptionChange = (option) => {
+    setSelectedOption(option);
+    setVisibleReviews(2);
+  };
+
   return (
     <div className={style.mainContainer}>
       <div className={style.heading}>
-        <div className={style.title}>Student's Feedback</div>
+        <div className={style.title}>Student&apos;s Feedback</div>
         {ratings.length > 0 && (
           <div className={style.filter}>
             <CustomSelect
               options={options}
-              setSelectedOption={setSelectedOption}
+              setSelectedOption={handleOptionChange}
               selectedOption={selectedOption}
               customPlaceholder="Filter by Rating"
             />
           </div>
         )}
       </div>
-      {ratings
-        .filter((rating) => rating.rating <= parseInt(selectedOption.value))
-        .sort((a, b) => b.rating - a.rating)
+      {filteredAndSortedRatings
         .slice(0, visibleReviews)
         .map((rating, index) => (
           <div key={index} className={style.feedbackContainer}>
@@ -123,7 +131,7 @@ const StudentsRating = () => {
             <Divider width="100%" />
           </div>
         ))}
-      {visibleReviews < ratings.length && (
+      {visibleReviews < length && (
         <button className={style.loadMoreButton} onClick={handleLoadMore}>
           <div className={style.loadMoreText}>Load More</div>
           <FontAwesomeIcon icon={faSpinner} spin style={{ color: "#FF6636" }} />

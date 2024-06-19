@@ -1,5 +1,6 @@
 import style from "./CourseSmall.module.css";
 import PeopleSVG from "../../../assets/svg/People.svg";
+import React from "react";
 
 import PropTypes from "prop-types";
 

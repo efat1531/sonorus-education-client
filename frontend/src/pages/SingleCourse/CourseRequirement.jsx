@@ -1,6 +1,6 @@
 import style from "./CourseRequirement.module.css";
 import RequirementList from "../../components/uitls/ListGenerator/RequirementList";
-import { text } from "@fortawesome/fontawesome-svg-core";
+import React from "react";
 
 const CourseRequirements = [
   {

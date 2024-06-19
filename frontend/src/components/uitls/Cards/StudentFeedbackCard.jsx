@@ -2,6 +2,7 @@ import style from "./StudentFeedbackCard.module.css";
 import PropTypes from "prop-types";
 import { formatDistanceToNow } from "date-fns";
 import StarRatingCard from "./StarRatingCard";
+import React from "react";
 
 const formatDate = (date) => {
   return formatDistanceToNow(new Date(date)) + " ago";

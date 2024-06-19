@@ -1,6 +1,7 @@
 import style from "./Footer.module.css";
 import ImageLinks from "./ImageLinks";
 import QuickLink from "./QuickLinks";
+import React from "react";
 
 const socialLinks = [
   {

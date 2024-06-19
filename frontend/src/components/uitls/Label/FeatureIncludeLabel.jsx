@@ -1,6 +1,7 @@
 import style from "./FeatureIncludeLabel.module.css";
 import SVGController from "../../../assets/svg/SVGController";
 import PropType from "prop-types";
+import React from "react";
 
 const FeatureIncludeLabel = ({ svgName, messgae }) => {
   return (

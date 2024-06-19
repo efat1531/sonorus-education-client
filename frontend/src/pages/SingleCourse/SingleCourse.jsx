@@ -10,6 +10,7 @@ import TeacherInfo from "./TeacherInfo";
 import WriteReview from "./WriteReview";
 import CourseRating from "./CourseRating";
 import StudentsRating from "./StudentsRating";
+import React from "react";
 
 const SingleCourse = () => {
   return (

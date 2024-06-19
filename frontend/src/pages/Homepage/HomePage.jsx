@@ -5,6 +5,7 @@ import HeroSection from "./HeroSection";
 import TopInstructor from "./TopInstructor";
 import HomePageCourseTemplate from "../../components/uitls/Template/HomePageCourseTemplate";
 import Footer from "../../components/Footer/Footer";
+import React from "react";
 
 const coursesJSON = [
   {

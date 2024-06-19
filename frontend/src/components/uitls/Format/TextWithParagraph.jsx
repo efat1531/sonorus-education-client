@@ -1,3 +1,6 @@
+import React from "react";
+import PropTypes from "prop-types";
+
 const TextWithParagraphs = ({ text }) => {
   const words = text.split(" ");
   const paragraphs = [];
@@ -21,6 +24,10 @@ const TextWithParagraphs = ({ text }) => {
       ))}
     </div>
   );
+};
+
+TextWithParagraphs.propTypes = {
+  text: PropTypes.string.isRequired,
 };
 
 export default TextWithParagraphs;

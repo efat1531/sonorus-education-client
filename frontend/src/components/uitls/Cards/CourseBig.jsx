@@ -1,6 +1,7 @@
 import style from "./CourseBig.module.css";
 import PropTypes from "prop-types";
 import PeopleSVG from "../../../assets/svg/People.svg";
+import React from "react";
 
 const studentCount = (students) => {
   return students > 1000 ? `${(students / 1000).toFixed(1)}k` : students;

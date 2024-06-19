@@ -1,5 +1,6 @@
 import style from "./FeatureCard.module.css";
 import FeatureLabel from "../Label/FeatureLabel";
+import React from "react";
 
 const studentsCount = (students) => {
   return students.toLocaleString("en-IN");

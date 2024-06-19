@@ -1,7 +1,7 @@
 import style from "./MainCourses.module.css";
 import CustomSelect from "../../components/uitls/Input/CustomSelect";
 import CourseSmall from "../../components/uitls/Cards/CourseSmall";
-import { useEffect, useState } from "react";
+import { useEffect, useState, React } from "react";
 
 const courses = [
   {

@@ -1,4 +1,5 @@
 import style from "./WriteReview.module.css";
+import React from "react";
 import { useState, useReducer } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -113,7 +114,7 @@ const WriteReview = () => {
           <button className={style.submitBtn}>
             <div
               className={style.submitText}
-              onClick={(e) => handleSubmitBtn(state, dispatch)}
+              onClick={() => handleSubmitBtn(state, dispatch)}
             >
               Submit
             </div>

@@ -1,6 +1,7 @@
 import style from "./FeatureLabel.module.css";
 import PropTypes from "prop-types";
 import SVGController from "../../../assets/svg/SVGController";
+import React from "react";
 
 const FeatureLabel = ({ SVG, FirstText, SecondText, StrokeColor }) => {
   return (

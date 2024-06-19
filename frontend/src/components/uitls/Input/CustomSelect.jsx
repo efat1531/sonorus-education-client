@@ -1,12 +1,11 @@
-import style from "./CustomSelect.module.css";
 import ReactSelect, { components } from "react-select";
 import PropTypes from "prop-types";
+import React from "react";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
-const DropdownIndicator = (props) => {
-  const { isOpen } = props;
+const DropdownIndicator = ({ isOpen, ...props }) => {
   return (
     <components.DropdownIndicator {...props}>
       <div style={{ transform: isOpen ? "rotate(180deg)" : "none" }}>
@@ -16,10 +15,16 @@ const DropdownIndicator = (props) => {
   );
 };
 
-const Placeholder = (props) => {
-  return (
-    <components.Placeholder {...props}>{props.children}</components.Placeholder>
-  );
+DropdownIndicator.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+};
+
+const Placeholder = ({ children, ...props }) => {
+  return <components.Placeholder {...props}>{children}</components.Placeholder>;
+};
+
+Placeholder.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 const CustomSelect = ({
@@ -34,12 +39,12 @@ const CustomSelect = ({
       <DropdownIndicator {...props} isOpen={isOpen} />
     ),
     Placeholder: (props) => (
-      <Placeholder {...props} children={customPlaceholder} />
+      <Placeholder {...props}>{customPlaceholder}</Placeholder>
     ),
   };
 
   const customStyles = {
-    control: (provided, state) => {
+    control: (provided) => {
       return {
         ...provided,
         width: "12.5rem",

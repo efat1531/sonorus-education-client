@@ -1,6 +1,6 @@
 import ShoppingCartSVG from "../../../assets/svg/ShoppingCart.svg";
 import style from "./ShoppingCartIcon.module.css";
-
+import React from "react";
 const cartItem = 0;
 
 const ShoppingCartIcon = () => {

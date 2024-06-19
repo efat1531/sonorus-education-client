@@ -1,6 +1,7 @@
 import style from "./RatingProgressBar.module.css";
 import StarRatingCard from "../Cards/StarRatingCard";
 import PropTypes from "prop-types";
+import React from "react";
 
 const ratingQuantity = {
   5: 0,
@@ -46,6 +47,10 @@ const RatingProgressBar = ({ value }) => {
       </div>
     </div>
   );
+};
+
+RatingProgressBar.propTypes = {
+  value: PropTypes.number.isRequired,
 };
 
 export default RatingProgressBar;

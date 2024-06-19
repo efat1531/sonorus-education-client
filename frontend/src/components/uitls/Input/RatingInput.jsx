@@ -2,8 +2,9 @@ import style from "./RatingInput.module.css";
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import SVGController from "../../../assets/svg/SVGController";
+import React from "react";
 
-const handleClick = (rating, dispatch, setHoverRating) => {
+const handleClick = (rating, dispatch) => {
   dispatch({ type: "rating", payload: rating });
 };
 
@@ -20,7 +21,7 @@ const RatingInput = ({ rating, dispatch }) => {
             key={index}
             onMouseEnter={() => setHoverRating(index + 1)}
             onMouseLeave={() => setHoverRating(rating)}
-            onClick={() => handleClick(index + 1, dispatch, setHoverRating)}
+            onClick={() => handleClick(index + 1, dispatch)}
           >
             <SVGController
               name="Star"

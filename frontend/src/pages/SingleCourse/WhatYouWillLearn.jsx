@@ -1,5 +1,6 @@
 import style from "./WhatYouWillLearn.module.css";
 import WhatYouWillLearnLabel from "../../components/uitls/Label/WhatYouWillLearnLabel";
+import React from "react";
 
 const whatYouWillLearn = [
   "You will learn how to design beautiful websites using Figma, an interface design tool used by designers at Uber, Airbnb and Microsoft.",

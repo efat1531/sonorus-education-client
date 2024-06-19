@@ -1,5 +1,6 @@
 import style from "./ShareSocial.module.css";
 import SVGController from "../../../assets/svg/SVGController";
+import React from "react";
 
 const ShareSocial = () => {
   return (

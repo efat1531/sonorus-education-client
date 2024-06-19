@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { faFile } from "@fortawesome/free-regular-svg-icons";
 import { useState } from "react";
+import React from "react";
 
 const convertDuration = (duration) => {
   const hours = Math.floor(duration / 60);
@@ -52,6 +53,14 @@ const CourseCurriculamList = ({ lesson }) => {
       )}
     </div>
   );
+};
+
+CourseCurriculamList.propTypes = {
+  lesson: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    duration: PropTypes.number,
+  }),
 };
 
 export default CourseCurriculamList;

@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 import React, { useState } from "react";
 
 const PriceCard = ({ price, discount = 0, endTime = Date.now() }) => {
-  endTime = new Date("2025-06-15T14:57:00").getTime();
+  endTime = new Date("2024-06-19T07:00:00").getTime();
   const [discountstate, setDiscountState] = useState(discount);
   const onEndTimer = () => {
     console.log("Timer ended");

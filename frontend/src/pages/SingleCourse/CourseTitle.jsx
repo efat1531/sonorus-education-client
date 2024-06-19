@@ -1,5 +1,6 @@
 import style from "./CourseTitle.module.css";
 import StarRatingCard from "../../components/uitls/Cards/StarRatingCard";
+import React from "react";
 
 const imageURL = "https://picsum.photos/200/200.jpg";
 const cateGory = "Development";

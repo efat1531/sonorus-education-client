@@ -1,4 +1,6 @@
 import style from "./LabelOff.module.css";
+import React from "react";
+import PropTypes from "prop-types";
 
 const LabelOff = ({ percentage }) => {
   return (
@@ -6,6 +8,10 @@ const LabelOff = ({ percentage }) => {
       <div className={style.labelOff}>{Math.round(percentage)}%&nbsp;off</div>
     </div>
   );
+};
+
+LabelOff.propTypes = {
+  percentage: PropTypes.number.isRequired,
 };
 
 export default LabelOff;

@@ -2,6 +2,7 @@ import style from "./WhatYouWillLearnLabel.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
+import React from "react";
 
 const WhatYouWillLearnLabel = ({ textpoint }) => {
   return (

@@ -1,6 +1,6 @@
 import style from "./TeacherInfoCard.module.css";
 const Url = `https://picsum.photos/seed/picsum/200/300`;
-import { useState } from "react";
+import { useState, React } from "react";
 
 import IconTextLabel from "../../uitls/Label/IconTextLabel";
 

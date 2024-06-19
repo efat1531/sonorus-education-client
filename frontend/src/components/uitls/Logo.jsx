@@ -1,5 +1,6 @@
 import GraduationCap from "../../assets/svg/GraducationCap.svg";
 import style from "./Logo.module.css";
+import React from "react";
 
 const Logo = () => {
   return (

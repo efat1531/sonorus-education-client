@@ -5,6 +5,7 @@ import FeatureCard from "../../components/uitls/Cards/FeatureCard";
 import ButtonTemplate from "../../components/uitls/Buttons/ButtonTemplate";
 import CourseIncludeCard from "../../components/uitls/Cards/CourseIncludeCard";
 import ShareSocial from "../../components/uitls/Label/ShareSocial";
+import React from "react";
 
 const SideBar = () => {
   const price = 100;

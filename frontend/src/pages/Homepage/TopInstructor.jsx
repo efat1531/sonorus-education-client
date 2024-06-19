@@ -1,5 +1,6 @@
 import style from "./TopInstructor.module.css";
 import InstructorCard from "../../components/uitls/Cards/InstructorCard";
+import React from "react";
 
 // Max 4 Instructor.
 const TopInstructor = () => (

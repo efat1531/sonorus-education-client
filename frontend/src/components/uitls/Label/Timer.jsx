@@ -1,5 +1,6 @@
 import style from "./Timer.module.css";
 import { useCountDown } from "@raddix/use-count-down";
+import React from "react";
 
 import PropTypes from "prop-types";
 
@@ -7,7 +8,7 @@ const Timer = ({ endTime, onFinishFunction }) => {
   const interval = countInterval(endTime);
   const initialTime = countInitialTime(endTime);
 
-  const [count, actions] = useCountDown(initialTime, {
+  const [count] = useCountDown(initialTime, {
     autoStart: true,
     onFinished: onFinishFunction,
     interval: interval,

@@ -5,7 +5,7 @@ import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import IconTextLabel from "../Label/IconTextLabel";
 import CourseCurriculamList from "../ListGenerator/CourseCurriculamList";
-import { Transition } from "react-transition-group";
+import React from "react";
 
 const totalDuration = (courseSection) => {
   return courseSection.lessons
@@ -69,15 +69,14 @@ const CourseCurriculamCard = ({ courseSection }) => {
           />
         </div>
       </div>
-      <Transition in={isOpen} timeout={200} unmountOnExit>
-        {(state) => (
-          <div className={`${style.curriculamContainer} ${style[state]}`}>
-            {courseSection.lessons.map((lesson) => (
-              <CourseCurriculamList lesson={lesson} key={lesson.id} />
-            ))}
-          </div>
-        )}
-      </Transition>
+
+      {isOpen && (
+        <div className={style.curriculamContainer}>
+          {courseSection.lessons.map((lesson) => (
+            <CourseCurriculamList lesson={lesson} key={lesson.id} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

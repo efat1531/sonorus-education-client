@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+import React from "react";
 import HomePage from "./pages/Homepage/HomePage";
 import CourseList from "./pages/CourseList/CourseList";
 import SingleCourseMainPage from "./pages/SingleCourse/MainPage";
@@ -8,6 +10,7 @@ const App = () => {
     <div>
       <SingleCourseMainPage />
       {/* <CourseList /> */}
+      {/* <HomePage /> */}
     </div>
   );
 };

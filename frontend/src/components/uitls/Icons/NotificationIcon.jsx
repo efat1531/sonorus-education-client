@@ -1,5 +1,6 @@
 import BellSVG from "../../../assets/svg/Bell.svg";
 import style from "./NotificationIcon.module.css";
+import React from "react";
 
 const numOfNotification = 0;
 
