@@ -1,0 +1,93 @@
+.mainContainer {
+  display: flex;
+  align-items: center;
+  height: 75vh;
+  gap: 7rem;
+}
+
+.errorContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+  padding-left: 18.75rem;
+}
+
+.errorHeading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.errorHeadingText {
+  color: var(--Gray-100, #e9eaf0);
+
+  font-family: Inter;
+  font-size: 5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 5rem; /* 100% */
+  letter-spacing: -0.1rem;
+}
+
+.subText {
+  color: var(--Gray-900, #1d2026);
+  width: 33.375rem;
+
+  font-family: Inter;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 3.25rem;
+  letter-spacing: -0.06rem;
+}
+
+.errorText {
+  color: var(--Gray-700, #4e5566);
+  width: 33.375rem;
+
+  font-family: Inter;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2rem;
+}
+
+.backBtn {
+  display: flex;
+  padding: 0rem 2rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--Primary-500, #ff6636);
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.backBtn:hover {
+  background: var(--Primary-600, #ff4d26);
+}
+
+.backBtn:active {
+  transform: translateY(0.125rem);
+}
+
+button > span {
+  color: var(--Gray-White, #fff);
+
+  /* Button/L */
+  font-family: Inter;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 3.5rem; /* 311.111% */
+  letter-spacing: -0.01125rem;
+  text-transform: capitalize;
+}
+
+.pictureContainer {
+  flex: 1;
+}

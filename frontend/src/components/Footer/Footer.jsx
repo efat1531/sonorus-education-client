@@ -94,7 +94,7 @@ const Footer = () => {
           <a href="#" className={style.developer}>
             Alpha Coders
           </a>
-          .
+          . Designed by Templatecookie.
         </div>
       </div>
     </footer>
