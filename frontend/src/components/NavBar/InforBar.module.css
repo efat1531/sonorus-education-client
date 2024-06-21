@@ -1,0 +1,29 @@
+.mainContainer {
+  display: flex;
+  width: 120rem;
+  padding: 1.25rem 2rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.leftInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.backBtn {
+  display: flex;
+  padding: 1.0625rem;
+  align-items: flex-start;
+  gap: 1rem;
+  border-radius: 6.25rem;
+  background: var(--Gray-White, #fff);
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}

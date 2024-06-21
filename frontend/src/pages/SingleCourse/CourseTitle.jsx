@@ -1,52 +1,62 @@
 import style from "./CourseTitle.module.css";
 import StarRatingCard from "../../components/uitls/Cards/StarRatingCard";
 import React from "react";
+import PropTypes from "prop-types";
+import userData from "../../../Data/userData.json";
 
-const imageURL = "https://picsum.photos/200/200.jpg";
-const cateGory = "Development";
+const CourseTitle = ({ course }) => {
+  const instructorInfo = userData.find(
+    (user) => user.userID === course.instructor
+  );
 
-const CourseTitle = () => {
   return (
     <div className={style.sectionContainer}>
       <div className={style.courseLink}>
-        <div>Home</div> <div>{">"}</div> <div>{cateGory}</div>
+        <div
+          onClick={() => {
+            window.location.href = "/";
+          }}
+        >
+          Home
+        </div>{" "}
+        <div>{">"}</div> <div>{course.category.name}</div>
       </div>
       {/* Title */}
-      <div className={style.courseTitle}>
-        Complete Website Responsive Design: from Figma to Webflow to Website
-        Design
-      </div>
+      <div className={style.courseTitle}>{course.title}</div>
       {/* Summary */}
-      <div className={style.courseSummary}>
-        3 in 1 Course: Learn to design websites with Figma, build with Webflow,
-        and make a living freelancing.
-      </div>
+      <div className={style.courseSummary}>{course.summary}</div>
       {/* Teacher and Rating*/}
       <div className={style.teacherRating}>
         {/* Teacher Info */}
         <div className={style.teacherInfo}>
           {/* Profile Img */}
           <div className={style.teacherImg}>
-            <img src={imageURL} alt="Teacher" />
+            <img src={instructorInfo.profileImg} alt="Teacher" />
           </div>
           {/* Teacher Name */}
           <div className={style.teacherName}>
             <div className={style.createdBy}>Created By</div>
-            <div className={style.orginalName}>John Doe</div>
+            <div className={style.orginalName}>{instructorInfo.name}</div>
           </div>
         </div>
         {/* Rating */}
         <div className={style.ratingInfo}>
           {/* star */}
-          <StarRatingCard rating={3.6} />
+          <StarRatingCard rating={course.rating} />
           {/* Rating */}
-          <div className={style.ratingShow}>3.6</div>
+          <div className={style.ratingShow}>{course.rating}</div>
           {/* Number of Ratings */}
-          <div className={style.numOfRatings}>(200 Ratings)</div>
+          <div className={style.numOfRatings}>
+            ({course.numOfRating}&nbsp;students)
+          </div>
         </div>
       </div>
     </div>
   );
+};
+
+CourseTitle.propTypes = {
+  course: PropTypes.object.isRequired,
 };
 
 export default CourseTitle;

@@ -72,8 +72,8 @@ const CourseCurriculamCard = ({ courseSection }) => {
 
       {isOpen && (
         <div className={style.curriculamContainer}>
-          {courseSection.lessons.map((lesson) => (
-            <CourseCurriculamList lesson={lesson} key={lesson.id} />
+          {courseSection.lessons.map((lesson, index) => (
+            <CourseCurriculamList lesson={lesson} key={index} />
           ))}
         </div>
       )}

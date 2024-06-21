@@ -1,48 +1,54 @@
 import style from "./NavListDesktop.module.css";
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const NavList = () => {
   return (
     <ul className={style.ul}>
       <li className={style.li}>
-        <a href="/" className={style.a}>
+        <NavLink to="/" className={style.a}>
           Home
-        </a>
+        </NavLink>
       </li>
       <li className={style.li}>
-        <a href="#" className={style.a}>
+        <NavLink to="/why-learn" className={style.a}>
           Why Learn
-        </a>
+        </NavLink>
       </li>
       <li className={style.li}>
-        <a href="#" className={style.a}>
+        <NavLink to="/about-us" className={style.a}>
           About
-        </a>
+        </NavLink>
       </li>
       <li className={style.li}>
-        <a href="#" className={style.a}>
+        <NavLink to="/contact" className={style.a}>
           Contact
-        </a>
+        </NavLink>
       </li>
       <li className={style.li}>
-        <a href="#" className={style.a}>
+        <NavLink to="/resources" className={style.a}>
           Resourses
-        </a>
+        </NavLink>
       </li>
       <li className={style.li}>
-        <a href="#" className={style.a}>
+        <NavLink to="/courses" className={style.a}>
           Courses
-        </a>
+        </NavLink>
       </li>
       <li className={style.li}>
-        <a href="#" className={style.a}>
+        <NavLink to="/shop" className={style.a}>
           Shop
-        </a>
+        </NavLink>
       </li>
       <li className={style.li}>
-        <a href="#" className={style.a}>
+        <NavLink to="/blog" className={style.a}>
           Blog
-        </a>
+        </NavLink>
+      </li>
+      <li className={style.li}>
+        <NavLink to="/become-an-instructor" className={style.a}>
+          Become an Instructor
+        </NavLink>
       </li>
     </ul>
   );

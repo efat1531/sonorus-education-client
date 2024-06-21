@@ -5,16 +5,35 @@ import FeatureCard from "../../components/uitls/Cards/FeatureCard";
 import ButtonTemplate from "../../components/uitls/Buttons/ButtonTemplate";
 import CourseIncludeCard from "../../components/uitls/Cards/CourseIncludeCard";
 import ShareSocial from "../../components/uitls/Label/ShareSocial";
+import PropTypes from "prop-types";
 import React from "react";
 
-const SideBar = () => {
-  const price = 100;
-  const discount = 20;
+const SideBar = ({ course }) => {
+  const {
+    price,
+    discount,
+    discountEnds,
+    duration,
+    courseLevel,
+    courseLanguage,
+    students,
+  } = course;
+  console.log(
+    typeof duration,
+    typeof courseLevel,
+    typeof courseLanguage,
+    typeof students
+  );
   return (
     <div className={style.mainContainer}>
-      <PriceCard price={price} discount={discount} />
+      <PriceCard price={price} discount={discount} endTime={discountEnds} />
       <Divider width="26.5rem" />
-      <FeatureCard />
+      <FeatureCard
+        duration={duration}
+        level={courseLevel}
+        totalStudents={students}
+        language={courseLanguage}
+      />
       <Divider width="26.5rem" />
       <div className={style.buttonContainer}>
         <ButtonTemplate
@@ -48,6 +67,10 @@ const SideBar = () => {
       <ShareSocial />
     </div>
   );
+};
+
+SideBar.propTypes = {
+  course: PropTypes.object.isRequired,
 };
 
 export default SideBar;

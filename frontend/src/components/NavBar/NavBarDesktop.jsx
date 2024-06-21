@@ -7,6 +7,7 @@ import NavImage from "../uitls/ImageCovers/NavImage";
 import NotificationIcon from "../uitls/Icons/NotificationIcon";
 import FavouriteIcon from "../uitls/Icons/FavouritesIcon";
 import ShoppingCartIcon from "../uitls/Icons/ShoppingCartIcon";
+import PropTypes from "prop-types";
 import React from "react";
 
 const logoStyle = {
@@ -23,7 +24,7 @@ const logoTextStyle = {
   letterSpacing: "-0.06rem",
 };
 
-const NavBarDesktop = () => {
+const NavBarDesktop = ({ children }) => {
   const user = false;
   return (
     <>
@@ -45,8 +46,13 @@ const NavBarDesktop = () => {
           </div>
         )}
       </div>
+      {children ? children : <></>}
     </>
   );
+};
+
+NavBarDesktop.propTypes = {
+  children: PropTypes.node,
 };
 
 export default NavBarDesktop;

@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: left;
   align-items: left;
-  max-width: 54.5rem;
+  width: 54.5rem;
   gap: 1.5rem;
 }
 

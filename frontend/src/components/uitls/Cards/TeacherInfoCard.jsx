@@ -1,14 +1,12 @@
 import style from "./TeacherInfoCard.module.css";
-const Url = `https://picsum.photos/seed/picsum/200/300`;
+
 import { useState, React } from "react";
+import PropTypes from "prop-types";
 
 import IconTextLabel from "../../uitls/Label/IconTextLabel";
 
-const description = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at ultrices mi. Pellentesque porttitor tincidunt maximus. Vivamus placerat porttitor elit, in rutrum urna sollicitudin id. Phasellus ac ultrices risus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed et dictum dolor. Phasellus posuere scelerisque ante. Pellentesque cursus commodo lacus eu fermentum. Aliquam pellentesque, arcu pellentesque hendrerit vulputate, purus neque mattis est, in fringilla lacus nunc at arcu. Pellentesque nec cursus est. Nam et massa ac nisl facilisis iaculis. Vivamus ac lacus risus.
-
-Sed pellentesque, dolor in congue consequat, enim elit tempor enim, vitae sodales metus augue vehicula magna. Curabitur facilisis commodo odio, a tincidunt augue interdum a. Morbi mauris ipsum, commodo vitae lectus ac, suscipit pharetra erat. Etiam iaculis enim ac mollis cursus. Sed ornare blandit mattis. Integer sodales ligula ut risus sodales, ut vehicula lectus pulvinar. Vestibulum commodo dignissim justo, vel tincidunt elit hendrerit id. Nulla nec maximus nisl, quis finibus elit. Integer pulvinar tempor feugiat. Etiam ultrices turpis non dignissim finibus. Etiam at mollis nisi. Ut nulla magna, rutrum porttitor dolor vitae, iaculis mollis justo. Integer laoreet aliquam nunc et convallis. Integer elementum ligula nec mattis ornare. Vivamus pellentesque felis vel mauris vestibulum.`;
-
-const TeacherInfoCard = () => {
+const TeacherInfoCard = ({ instructorInfo }) => {
+  const { name, profileImg, designation, bio } = instructorInfo;
   const [isExpanded, setIsExpanded] = useState(false);
   const toggleExpanded = () => {
     setIsExpanded(!isExpanded);
@@ -18,13 +16,13 @@ const TeacherInfoCard = () => {
       <div
         className={style.instructorPhoto}
         style={{
-          background: `url(${Url}) lightgray 50% / cover no-repeat`,
+          background: `url(${profileImg}) lightgray 50% / cover no-repeat`,
         }}
       ></div>
       <div className={style.info}>
         <div className={style.teacherInfo}>
-          <div className={style.name}>Jhon Doe</div>
-          <div className={style.designation}>English Lecturer</div>
+          <div className={style.name}>{name}</div>
+          <div className={style.designation}>{designation}</div>
         </div>
         <div className={style.funFact}>
           <IconTextLabel
@@ -86,23 +84,29 @@ const TeacherInfoCard = () => {
           <div
             className={isExpanded ? style.expandedText : style.collapsedText}
           >
-            {description}
+            {bio}
           </div>
-          <div className={style.buttonContainer}>
-            {isExpanded ? (
-              <button onClick={toggleExpanded} className={style.buttonStyle}>
-                Read Less
-              </button>
-            ) : (
-              <button onClick={toggleExpanded} className={style.buttonStyle}>
-                Read More
-              </button>
-            )}
-          </div>
+          {bio.length > 280 && (
+            <div className={style.buttonContainer}>
+              {isExpanded ? (
+                <button onClick={toggleExpanded} className={style.buttonStyle}>
+                  Read Less
+                </button>
+              ) : (
+                <button onClick={toggleExpanded} className={style.buttonStyle}>
+                  Read More
+                </button>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </div>
   );
+};
+
+TeacherInfoCard.propTypes = {
+  instructorInfo: PropTypes.object.isRequired,
 };
 
 export default TeacherInfoCard;

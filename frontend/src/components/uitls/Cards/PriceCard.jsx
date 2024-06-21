@@ -6,11 +6,14 @@ import Timer from "../Label/Timer";
 import PropTypes from "prop-types";
 import React, { useState } from "react";
 
-const PriceCard = ({ price, discount = 0, endTime = Date.now() }) => {
-  endTime = new Date("2024-06-19T07:00:00").getTime();
+const PriceCard = ({
+  price,
+  discount = 0,
+  endTime = Date.now().toString(),
+}) => {
+  endTime = new Date(endTime).getTime();
   const [discountstate, setDiscountState] = useState(discount);
   const onEndTimer = () => {
-    console.log("Timer ended");
     discount = 0;
     setDiscountState(0);
   };
@@ -73,7 +76,7 @@ const calculatePercentage = (price, discount) => {
 PriceCard.propTypes = {
   price: PropTypes.number.isRequired,
   discount: PropTypes.number,
-  endTime: PropTypes.number,
+  endTime: PropTypes.string,
 };
 
 export default PriceCard;

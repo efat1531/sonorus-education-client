@@ -12,6 +12,8 @@ const VideoPlayer = ({ videoID, width, height }) => {
     },
   };
 
+  videoID = videoID.split("v=")[1];
+
   const _onReady = (event) => {
     // access to player in all event handlers via event.target
     event.target.pauseVideo();
